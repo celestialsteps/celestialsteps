@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Birth Data Request - Celestial Steps</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Celestial Steps</h1>
+      <p class="subtitle">The companion to your astrological journey</p>
+      <p class="motto">Learn, discover, grow</p>
+    </div>
+  </header>
 
+  <main>
+    <section class="container">
+      <h2>Birth Data Request Form</h2>
+      <p>Please provide your birth details to receive your personalized astrology reading.</p>
+
+      <form id="birth-data-form" action="#" method="POST">
+        <label for="fullName">Full Name <span class="required">*</span></label>
+        <input type="text" id="fullName" name="fullName" required placeholder="Your full name" />
+
+        <label for="dob">Date of Birth <span class="required">*</span></label>
+        <input type="date" id="dob" name="dob" required />
+
+        <label for="timeOfBirth">Time of Birth</label>
+        <input type="time" id="timeOfBirth" name="timeOfBirth" />
+        <small>If unknown, leave blank or specify in notes.</small>
+
+        <label for="placeOfBirth">Place of Birth <span class="required">*</span></label>
+        <input type="text" id="placeOfBirth" name="placeOfBirth" required placeholder="City, Country" />
+
+        <label for="email">Email Address <span class="required">*</span></label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" />
+
+        <label for="phone">Phone Number (optional)</label>
+        <input type="tel" id="phone" name="phone" placeholder="+1234567890" />
+
+        <label for="notes">Additional Questions or Notes</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Your questions or special requests"></textarea>
+
+        <button type="submit" class="btn">Submit Birth Data</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Celestial Steps. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // For now, prevent actual submission and show alert as placeholder
+    document.getElementById('birth-data-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Thank you for submitting your birth details. We will contact you shortly!');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
