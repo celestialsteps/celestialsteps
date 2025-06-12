@@ -1,76 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Celestial Steps – The companion to your astrological journey</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website Title</title>
+   </head>
 <body>
-  <header>
-  <div class="container">
-    <h1>Celestial Steps</h1>
-    <p class="subtitle">The companion to your astrological journey</p>
-    <p class="motto">Learn, discover, grow</p>
-  </div>
-  <nav class="top-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="form.html">Request a Reading</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="payment.html">Payment</a></li>
-      <li><a href="#footer">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">Your Logo</a>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+    </header>
 
-  <main>
-    <section id="intro" class="container celestial-bg">
-      <h2>Welcome to Celestial Steps</h2>
-      <p>Your personalized astrology guidance to help you navigate life’s rhythms and cycles.</p>
-    </section>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero" id="home">
+                <h1>Welcome to Your Website</h1>
+                <p>This is a placeholder for your main headline and description. Replace this text with your own compelling message that captures your visitors' attention.</p>
+                <a href="#about" class="cta-button">Get Started</a>
+            </section>
 
-    <section id="services" class="container">
-      <h2>Our Services</h2>
-      <ul>
-        <li>Forecast readings (transits, progressions, solar returns)</li>
-        <li>Compatibility analysis and relationship insights</li>
-        <li>Birth chart interpretation and personality insights</li>
-        <li>Yearly and monthly personalized forecasts</li>
-        <li>Consultations tailored to your goals and questions</li>
-      </ul>
-    </section>
+            <!-- About Section -->
+            <section class="content-section" id="about">
+                <h2>About Us</h2>
+                <p>This is a placeholder for your about section. Tell your visitors who you are, what you do, and what makes you unique. Share your story, mission, and values here.</p>
+                <p>Add more paragraphs as needed to fully describe your business, organization, or personal brand. This section should help visitors understand what you're all about.</p>
+            </section>
 
-    <section id="birth-data-request" class="container">
-      <h2>Send Your Birth Details</h2>
-      <p>To receive your personalized reading, please submit your birth data first.</p>
-      <a href="form.html" class="btn">Fill Birth Data Request Form</a>
-    </section>
+            <!-- Services/Features Section -->
+            <section class="content-section" id="services">
+                <h2>Our Services</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon">🚀</div>
+                        <h3>Service One</h3>
+                        <p>Description of your first service or feature. Explain the benefits and value you provide to your customers.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">💡</div>
+                        <h3>Service Two</h3>
+                        <p>Description of your second service or feature. Highlight what makes this offering special and valuable.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🎯</div>
+                        <h3>Service Three</h3>
+                        <p>Description of your third service or feature. Focus on the outcomes and results your clients can expect.</p>
+                    </div>
+                </div>
+            </section>
 
-    <section id="payment" class="container">
-      <h2>Payment Options</h2>
-      <p>Payments accepted via PayPal and Stripe. Coming soon!</p>
-      <div class="payment-buttons">
-        <button disabled class="btn disabled">PayPal (coming soon)</button>
-        <button disabled class="btn disabled">Stripe (coming soon)</button>
-      </div>
-    </section>
+            <!-- Portfolio/Work Section -->
+            <section class="content-section" id="portfolio">
+                <h2>Our Work</h2>
+                <p>This section is perfect for showcasing your portfolio, case studies, testimonials, or recent projects. Replace this placeholder text with examples of your best work.</p>
+                <p>You can add images, descriptions, and links to detailed case studies or project pages. This helps build credibility and shows potential clients what you can achieve.</p>
+            </section>
 
-    <section id="contact" class="container">
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:contact@celestialsteps.com">contact@celestialsteps.com</a></p>
-      <p>Instagram: <a href="https://instagram.com/celestialsteps" target="_blank">@celestialsteps</a></p>
-    </section>
+            <!-- Contact Section -->
+            <section class="content-section" id="contact">
+                <h2>Get In Touch</h2>
+                <p>Ready to work together? This is where you'll include your contact information, contact form, or call-to-action for visitors to reach out.</p>
+                <p>Add your email address, phone number, physical address, or any other relevant contact details. You might also want to include your social media links here.</p>
+            </section>
+        </div>
+    </main>
 
-    <section id="quote" class="container quote">
-      <blockquote>
-        "Astrology is a language. If you understand this language, the sky speaks to you." – Dane Rudhyar
-      </blockquote>
-    </section>
-  </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact</a>
+        </p>
+    </footer>
 
-  <footer>
-    <p>© 2025 Celestial Steps. All rights reserved.</p>
-  </footer>
+    <script>
+        // Mobile menu toggle functionality
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu after clicking
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navMenu = document.querySelector('.nav-menu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!navMenu.contains(e.target) && !toggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
