@@ -1,63 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Services - Celestial Steps</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Astrology Services - Professional Readings & Consultations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #006699 0%, #004d73 100%);
+            color: white;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            background: linear-gradient(135deg, #006699 0%, #004d73 100%);
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,102,153,0.2);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,102,153,0.1);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(135deg, #99ccff, #006699);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,102,153,0.2);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #99ccff, #66b3ff);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #003d5c;
+            box-shadow: 0 8px 25px rgba(153,204,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h2 {
+            color: #006699;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .service-card .price {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #006699;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .service-features li::before {
+            content: '✦';
+            color: #99ccff;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .service-duration {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1.5rem 0;
+            border-left: 4px solid #99ccff;
+        }
+
+        .service-duration strong {
+            color: #006699;
+        }
+
+        .book-button {
+            background: #ffcc00;
+            color: #003d5c;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+            cursor: pointer;
+        }
+
+        .book-button:hover {
+            background: #e6b800;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255,204,0,0.3);
+        }
+
+        /* Consultation CTA */
+        .consultation-cta {
+            background: linear-gradient(135deg, #006699 0%, #004d73 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 4rem 0;
+            box-shadow: 0 15px 35px rgba(0,102,153,0.2);
+        }
+
+        .consultation-cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .consultation-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: #ffcc00;
+            color: #003d5c;
+            padding: 1.2rem 2.5rem;
+            border: 2px solid #ffcc00;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #e6b800;
+            border-color: #e6b800;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255,204,0,0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: #003d5c;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer p {
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: #99ccff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffcc00;
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: linear-gradient(135deg, #006699 0%, #004d73 100%);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-menu li {
+                margin: 1rem 0;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .service-card {
+                padding: 2rem;
+            }
+
+            .nav-container {
+                padding: 1rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .consultation-cta {
+                padding: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Celestial Steps</h1>
-      <p class="subtitle">The companion to your astrological journey</p>
-      <p class="motto">Learn, discover, grow</p>
-    </div>
-    <nav class="top-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="form.html">Request a Reading</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="payment.html">Payment</a></li>
-        <li><a href="#footer">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">Stellar Insights</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="portfolio.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+    </header>
 
-  <main class="container">
-    <h2>Astrology Services</h2>
-    <p>Select from a variety of personalized astrological readings designed to guide, illuminate, and inspire.</p>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1>Professional Astrology Services</h1>
+                <p>Unlock the wisdom of the stars with our comprehensive astrology readings and consultations</p>
+            </section>
 
-    <section class="service">
-      <h3>🌟 12-Month Forecast</h3>
-      <p>A full year of transits and progressions, tailored to your natal chart. Insightful, structured, and holistic.</p>
-    </section>
+            <!-- Services Grid -->
+            <div class="services-grid">
+                <!-- Advanced Birth Chart Reading -->
+                <div class="service-card">
+                    <div class="service-icon">🌟</div>
+                    <h2>Advanced Birth Chart Reading</h2>
+                    <div class="price">€120</div>
+                    <p>Discover your cosmic blueprint with an in-depth analysis of your natal chart. This comprehensive reading reveals your personality traits, life purpose, strengths, challenges, and soul's journey.</p>
+                    
+                    <ul class="service-features">
+                        <li>Complete planetary positions and aspects analysis</li>
+                        <li>Houses and their meanings in your life</li>
+                        <li>Rising sign and its influence on your personality</li>
+                        <li>Life purpose and karmic lessons</li>
+                        <li>Career and relationship insights</li>
+                        <li>Written report included</li>
+                    </ul>
+                    
+                    <div class="service-duration">
+                        <strong>Duration:</strong> 90 minutes live session + detailed written report
+                    </div>
+                    
+                    <a href="#contact" class="book-button">Book Your Reading</a>
+                </div>
 
-    <section class="service">
-      <h3>💞 Compatibility & Relationship Insights</h3>
-      <p>Understand dynamics in love, business, family or friendships. Includes synastry and composite interpretations.</p>
-    </section>
+                <!-- Advanced Synastry Reading -->
+                <div class="service-card">
+                    <div class="service-icon">💫</div>
+                    <h2>Advanced Synastry Reading</h2>
+                    <div class="price">€160</div>
+                    <p>Explore the cosmic dynamics between you and your partner, friend, or family member. This detailed compatibility analysis reveals relationship patterns, challenges, and growth opportunities.</p>
+                    
+                    <ul class="service-features">
+                        <li>Detailed compatibility analysis between two charts</li>
+                        <li>Planetary aspects and their relationship meanings</li>
+                        <li>Communication styles and love languages</li>
+                        <li>Conflict resolution strategies</li>
+                        <li>Long-term relationship potential</li>
+                        <li>Composite chart interpretation</li>
+                    </ul>
+                    
+                    <div class="service-duration">
+                        <strong>Duration:</strong> 2 hours live session + comprehensive written analysis
+                    </div>
+                    
+                    <a href="#contact" class="book-button">Book Your Reading</a>
+                </div>
 
-    <section class="service">
-      <h3>🔮 Birth Chart Reading</h3>
-      <p>In-depth analysis of your natal chart: strengths, life themes, soul patterns and potential challenges.</p>
-    </section>
+                <!-- Advanced Forecasting Reading -->
+                <div class="service-card">
+                    <div class="service-icon">🔮</div>
+                    <h2>Advanced Forecasting Reading</h2>
+                    <div class="price">€140</div>
+                    <p>Navigate your future with confidence using advanced predictive astrology techniques. This reading covers upcoming transits, progressions, and solar returns for the next 12 months.</p>
+                    
+                    <ul class="service-features">
+                        <li>12-month detailed forecast</li>
+                        <li>Major transit analysis and timing</li>
+                        <li>Solar return chart interpretation</li>
+                        <li>Monthly themes and opportunities</li>
+                        <li>Best timing for important decisions</li>
+                        <li>Challenges and how to navigate them</li>
+                    </ul>
+                    
+                    <div class="service-duration">
+                        <strong>Duration:</strong> 90 minutes live session + monthly guidance calendar
+                    </div>
+                    
+                    <a href="#contact" class="book-button">Book Your Reading</a>
+                </div>
 
-    <section class="service">
-      <h3>🌙 Personal Questions</h3>
-      <p>Ask about career, timing, purpose or life crossroads. Your chart reveals what supports or delays progress.</p>
-    </section>
+                <!-- Astrology Consultation -->
+                <div class="service-card">
+                    <div class="service-icon">🌙</div>
+                    <h2>Astrology Consultation</h2>
+                    <div class="price">€95</div>
+                    <p>Get personalized guidance on specific life questions or situations. This focused session addresses your immediate concerns using astrological insights and practical advice.</p>
+                    
+                    <ul class="service-features">
+                        <li>Focused discussion on your specific questions</li>
+                        <li>Current astrological influences affecting you</li>
+                        <li>Practical guidance and recommendations</li>
+                        <li>Timing advice for important decisions</li>
+                        <li>Follow-up email with key points</li>
+                        <li>Flexible format - can be done via video or phone</li>
+                    </ul>
+                    
+                    <div class="service-duration">
+                        <strong>Duration:</strong> 60 minutes focused consultation + follow-up summary
+                    </div>
+                    
+                    <a href="#contact" class="book-button">Book Your Consultation</a>
+                </div>
+            </div>
 
-    <section class="service">
-      <h3>✨ Custom Requests</h3>
-      <p>If you need a tailored blend of the above or something unique, contact me directly to discuss.</p>
-    </section>
+            <!-- Consultation CTA -->
+            <section class="consultation-cta">
+                <h2>Not Sure Which Service is Right for You?</h2>
+                <p>Book a complimentary 15-minute consultation to discuss your needs and find the perfect reading for your journey. We'll help you choose the service that will provide the most valuable insights for your current situation.</p>
+                <a href="#contact" class="cta-button">Schedule Free Consultation</a>
+            </section>
+        </div>
+    </main>
 
-    <p><a href="form.html" class="btn">Request a Reading</a></p>
-  </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Stellar Insights. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact</a>
+        </p>
+    </footer>
 
-  <footer id="footer">
-    <p>© 2025 Celestial Steps. All rights reserved. | celestialsteps@gmail.com</p>
-  </footer>
+    <script>
+        // Mobile menu toggle functionality
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu after clicking
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navMenu = document.querySelector('.nav-menu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!navMenu.contains(e.target) && !toggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Add animation delay to service cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.style.animation = 'fadeInUp 0.8s ease forwards';
+            });
+        });
+    </script>
 </body>
 </html>
