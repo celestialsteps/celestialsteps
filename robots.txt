@@ -1,6 +1,5 @@
 User-agent: *
-Disallow: /blog_template.html
-Disallow: /templates/
+Disallow: /templates/blog_template.html
 Disallow: /admin/
 Disallow: /private/
 Allow: /
