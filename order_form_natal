@@ -1,1 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth Chart Reading Order Form - Stellar Insights</title>
+    
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">Stellar Insights</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="portfolio.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </nav>
+    </header>
 
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1>Birth Chart Reading Order</h1>
+                <p>Provide your birth details to unlock the secrets of your cosmic blueprint</p>
+            </section>
+
+            <!-- Order Form -->
+            <form class="order-form" id="birthChartForm">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h2>Personal Information</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name <span class="required">*</span></label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name <span class="required">*</span></label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Birth Date -->
+                <div class="form-section">
+                    <h2>Birth Date</h2>
+                    <div class="form-row-three">
+                        <div class="form-group">
+                            <label for="birthDay">Day <span class="required">*</span></label>
+                            <select id="birthDay" name="birthDay" required>
+                                <option value="">Select Day</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthMonth">Month <span class="required">*</span></label>
+                            <select id="birthMonth" name="birthMonth" required>
+                                <option value="">Select Month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthYear">Year <span class="required">*</span></label>
+                            <select id="birthYear" name="birthYear" required>
+                                <option value="">Select Year</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Birth Time -->
+                <div class="form-section">
+                    <h2>Birth Time</h2>
+                    <div class="form-group">
+                        <label>Exact Time of Birth</label>
+                        <div class="time-input-group">
+                            <select id="birthHour" name="birthHour">
+                                <option value="">Hour</option>
+                            </select>
+                            <select id="birthMinute" name="birthMinute">
+                                <option value="">Minute</option>
+                            </select>
+                            <select id="birthAmPm" name="birthAmPm">
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                            </select>
+                        </div>
+                        <div class="time-unknown">
+                            <input type="checkbox" id="timeUnknown" name="timeUnknown" onchange="toggleTimeInputs()">
+                            <label for="timeUnknown">I don't know my exact birth time</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Birth Location -->
+                <div class="form-section">
+                    <h2>Birth Location</h2>
+                    <div class="form-group">
+                        <label for="birthCity">City/Town <span class="required">*</span></label>
+                        <div class="location-search">
+                            <input type="text" id="birthCity" name="birthCity" placeholder="Enter your birth city" required>
+                            <div class="location-suggestions" id="locationSuggestions"></div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="birthState">State/Province</label>
+                            <input type="text" id="birthState" name="birthState" placeholder="State or Province">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthCountry">Country <span class="required">*</span></label>
+                            <select id="birthCountry" name="birthCountry" required>
+                                <option value="">Select Country</option>
+                                <option value="US">United States</option>
+                                <option value="GB">United Kingdom</option>
+                                <option value="CA">Canada</option>
+                                <option value="AU">Australia</option>
+                                <option value="DE">Germany</option>
+                                <option value="FR">France</option>
+                                <option value="ES">Spain</option>
+                                <option value="IT">Italy</option>
+                                <option value="GR">Greece</option>
+                                <option value="NL">Netherlands</option>
+                                <option value="SE">Sweden</option>
+                                <option value="NO">Norway</option>
+                                <option value="DK">Denmark</option>
+                                <option value="FI">Finland</option>
+                                <option value="JP">Japan</option>
+                                <option value="IN">India</option>
+                                <option value="BR">Brazil</option>
+                                <option value="MX">Mexico</option>
+                                <option value="AR">Argentina</option>
+                                <option value="ZA">South Africa</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Selection -->
+                <div class="form-section">
+                    <h2>Select Your Reading</h2>
+                    <div class="service-selection">
+                        <div class="service-option" onclick="selectService('advanced', 120)">
+                            <input type="radio" id="advanced" name="serviceType" value="advanced" required>
+                            <div class="service-info">
+                                <div class="service-name">Advanced Birth Chart Reading</div>
+                                <div class="service-description">Complete planetary positions, aspects, houses, and life purpose analysis with 90-minute session</div>
+                            </div>
+                            <div class="service-price">€120</div>
+                        </div>
+                        
+                        <div class="service-option" onclick="selectService('consultation', 95)">
+                            <input type="radio" id="consultation" name="serviceType" value="consultation">
+                            <div class="service-info">
+                                <div class="service-name">Astrology Consultation</div>
+                                <div class="service-description">Focused 60-minute session addressing specific questions about your birth chart</div>
+                            </div>
+                            <div class="service-price">€95</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Information -->
+                <div class="form-section">
+                    <h2>Additional Information</h2>
+                    <div class="form-group">
+                        <label for="specificQuestions">Specific Questions or Areas of Focus</label>
+                        <textarea id="specificQuestions" name="specificQuestions" rows="4" placeholder="Please share any specific questions about your life, relationships, career, or areas you'd like to explore in your reading..."></textarea>
+                    </div>
+                    
+                    <div class="contact-preferences">
+                        <label>Preferred Contact Method for Scheduling:</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="contactEmail" name="contactMethod" value="email">
+                                <label for="contactEmail">Email</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="contactPhone" name="contactMethod" value="phone">
+                                <label for="contactPhone">Phone</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="contactVideo" name="contactMethod" value="video">
+                                <label for="contactVideo">Video Call</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-item">
+                        <span>Selected Service:</span>
+                        <span id="selectedServiceName">Please select a service</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Duration:</span>
+                        <span id="selectedServiceDuration">-</span>
+                    </div>
+                    <div class="summary-item summary-total">
+                        <span>Total:</span>
+                        <span id="totalPrice">€0</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-button" id="submitButton" disabled>
+                    Complete Order - Secure Payment
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 Stellar Insights. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact</a>
+        </p>
+    </footer>
+
+    <script>
+        // Initialize form elements
+        document.addEventListener('DOMContentLoaded', function() {
+            populateDayOptions();
+            populateYearOptions();
+            populateHourOptions();
+            populateMinuteOptions();
+            validateForm();
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navMenu = document.querySelector('.nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Populate day options
+        function populateDayOptions() {
+            const daySelect = document.getElementById('birthDay');
+            for (let i = 1; i <= 31; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                daySelect.appendChild(option);
+            }
+        }
+
+        // Populate year options
+        function populateYearOptions() {
+            const yearSelect = document.getElementById('birthYear');
+            const currentYear = new Date().getFullYear();
+            for (let i = currentYear; i >= 1900; i--) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                yearSelect.appendChild(option);
+            }
+        }
+
+        // Populate hour options
+        function populateHourOptions() {
+            const hourSelect = document.getElementById('birthHour');
+            for (let i = 1; i <= 12; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i.toString().padStart(2, '0');
+                hourSelect.appendChild(option);
+            }
+        }
+
+        // Populate minute options
+        function populateMinuteOptions() {
+            const minuteSelect = document.getElementById('birthMinute');
+            for (let i = 0; i < 60; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i.toString().padStart(2, '0');
+                minuteSelect.appendChild(option);
+            }
+        }
+
+        // Toggle time inputs when "time unknown" is checked
+        function toggleTimeInputs() {
+            const timeUnknown = document.getElementById('timeUnknown');
+            const timeInputs = document.querySelectorAll('#birthHour, #birthMinute, #birthAmPm');
+            
+            timeInputs.forEach(input => {
+                input.disabled = timeUnknown.checked;
+                if (timeUnknown.checked) {
+                    input.value = '';
+                }
+            });
+        }
+
+        // Service selection
+        function selectService(serviceType, price) {
+            const radio = document.getElementById(serviceType);
+            radio.checked = true;
+            
+            const serviceNames = {
+                'advanced': 'Advanced Birth Chart Reading',
+                'consultation': 'Astrology Consultation'
+            };
+            
+            const serviceDurations = {
+                'advanced': '90 minutes + written report',
+                'consultation': '60 minutes + follow-up summary'
+            };
+            
+            document.getElementById('selectedServiceName').textContent = serviceNames[serviceType];
+            document.getElementById('selectedServiceDuration').textContent = serviceDurations[serviceType];
+            document.getElementById('totalPrice').textContent = `€${price}`;
+            
+            validateForm();
+        }
+
+        // Form validation
+        function validateForm() {
+            const requiredFields = [
+                'firstName', 'lastName', 'email', 'birthDay', 'birthMonth', 'birthYear', 
+                'birthCity', 'birthCountry'
+            ];
+            
+            const serviceSelected = document.querySelector('input[name="serviceType"]:checked');
+            const submitButton = document.getElementById('submitButton');
+            
+            let allValid = true;
+            
+            requiredFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (!field.value.trim()) {
+                    allValid = false;
+                }
+            });
+            
+            if (!serviceSelected) {
+                allValid = false;
+            }
+            
+            submitButton.disabled = !allValid;
+        }
+
+        // Add event listeners for form validation
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('birthChartForm');
+            const inputs = form.querySelectorAll('input, select, textarea');
+            
+            inputs.forEach(input => {
+                input.addEventListener('change', validateForm);
+                input.addEventListener('input', validateForm);
+            });
+        });
+
+        // Form submission
+        document.getElementById('birthChartForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = {};
+            
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+            
+            // In a real application, you would send this data to your server
+            console.log('Order submitted:', data);
+            
+            // Show success message
+            alert('Thank you for your order! We will contact you within 24 hours to schedule your birth chart reading. Please check your email for confirmation details.');
+            
+            // Reset form
+            this.reset();
+            document.getElementById('totalPrice').textContent = '€0';
+            document.getElementById('selectedServiceName').textContent = 'Please select a service';
+            document.getElementById('selectedServiceDuration').textContent = '-';
+            document.getElementById('submitButton').disabled = true;
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            const navMenu = document.querySelector('.nav-menu');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (!navMenu.contains(e.target) && !toggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
