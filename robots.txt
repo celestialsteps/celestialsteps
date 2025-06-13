@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /blog_template.html
+Disallow: /templates/
+Disallow: /admin/
+Disallow: /private/
+Allow: /
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://yourwebsite.com/sitemap.xml
