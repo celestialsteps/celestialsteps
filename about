@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Stellar Insights | Professional Astrologer</title>
+    <link rel="stylesheet" href="style_main.css">
+</head>
+<body>
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero">
+                <h1>About Your Cosmic Guide</h1>
+                <p>Discover the journey that led me to become your trusted astrology consultant and spiritual advisor.</p>
+            </section>
+
+            <!-- Personal Story Section -->
+            <section class="content-section">
+                <h2>My Journey to the Stars</h2>
+                <p>My fascination with astrology began during a pivotal moment in my early twenties when I was searching for deeper meaning and direction in life. What started as curiosity about my own birth chart quickly evolved into a profound calling to help others discover their cosmic blueprint.</p>
+                
+                <p>Over the past decade, I've dedicated myself to mastering the ancient art of astrology through intensive study, mentorship with renowned astrologers, and thousands of hours analyzing charts. My approach combines traditional astrological wisdom with modern psychological insights, creating readings that are both deeply spiritual and practically applicable.</p>
+            </section>
+
+            <!-- Credentials & Experience -->
+            <section class="content-section">
+                <h2>Professional Background</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <div class="card-icon">📚</div>
+                        <h3>Education & Certification</h3>
+                        <p>Certified Professional Astrologer with advanced training in psychological astrology, predictive techniques, and relationship counseling through astrology.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">⭐</div>
+                        <h3>10+ Years Experience</h3>
+                        <p>Over a decade of practice with more than 2,000 individual readings, workshops, and consultations helping clients navigate life's challenges.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-icon">🎯</div>
+                        <h3>Specialized Training</h3>
+                        <p>Advanced certifications in natal chart interpretation, synastry analysis, transit forecasting, and evolutionary astrology approaches.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Philosophy & Approach -->
+            <section class="content-section">
+                <h2>My Astrological Philosophy</h2>
+                <p>I believe astrology is a powerful tool for self-awareness and personal empowerment. Rather than viewing the stars as fixed destiny, I see them as a cosmic language that reveals your inherent potential, natural talents, and the timing of opportunities for growth.</p>
+                
+                <p>My readings focus on practical guidance that you can apply immediately to improve your relationships, career decisions, and personal development. I create a safe, non-judgmental space where you can explore your deepest questions and receive honest, compassionate insights.</p>
+                
+                <p>Every chart tells a unique story, and I'm honored to help you understand yours. Whether you're facing a major life transition, seeking relationship clarity, or simply curious about your cosmic nature, I'm here to illuminate your path forward.</p>
+            </section>
+
+            <!-- Personal Touch -->
+            <section class="content-section">
+                <h2>Beyond the Charts</h2>
+                <p>When I'm not interpreting planetary movements, you'll find me studying ancient mythology, practicing meditation, or exploring nature to stay connected to the rhythms that govern our universe. I'm a lifelong learner who continues to deepen my understanding of astrology's rich traditions while staying current with modern developments in the field.</p>
+                
+                <p>I'm passionate about making astrology accessible and relevant to modern life. My goal is to help you feel empowered by your cosmic insights, not overwhelmed by them. Every session is tailored to your specific needs and questions, ensuring you leave with practical wisdom you can immediately apply.</p>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="content-section">
+                <h2>Ready to Connect?</h2>
+                <p>I'm here to support you on your journey of self-discovery and cosmic understanding. Whether you're new to astrology or a seasoned enthusiast, I'd love to help you unlock the wisdom hidden in your birth chart.</p>
+                
+                <p>Book your personalized reading today and discover what the stars have been waiting to tell you about your life's purpose, relationships, and the opportunities ahead.</p>
+                
+                <a href="services.html" class="cta-button">Book Your Reading</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script src="includes/components.js"></script>
+</body>
+</html>
