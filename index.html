@@ -10,13 +10,13 @@
     <!-- Header -->
     <header class="header">
         <nav class="nav-container">
-            <a href="#" class="logo">Your Logo</a>
+            <a href="index.html" class="logo">Your Logo</a>
             <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
         </nav>
@@ -29,7 +29,7 @@
             <section class="hero" id="home">
                 <h1>Welcome to Your Website</h1>
                 <p>This is a placeholder for your main headline and description. Replace this text with your own compelling message that captures your visitors' attention.</p>
-                <a href="#about" class="cta-button">Get Started</a>
+                <a href="about.html" class="cta-button">Get Started</a>
             </section>
 
             <!-- About Section -->
@@ -61,11 +61,11 @@
                 </div>
             </section>
 
-            <!-- Portfolio/Work Section -->
-            <section class="content-section" id="portfolio">
-                <h2>Our Work</h2>
-                <p>This section is perfect for showcasing your portfolio, case studies, testimonials, or recent projects. Replace this placeholder text with examples of your best work.</p>
-                <p>You can add images, descriptions, and links to detailed case studies or project pages. This helps build credibility and shows potential clients what you can achieve.</p>
+            <!-- Blog Section -->
+            <section class="content-section" id="blog">
+                <h2>Latest Blog Posts</h2>
+                <p>Stay updated with our latest insights, news, and articles. This section showcases our most recent blog posts and thought leadership content.</p>
+                <p>You can add previews of your blog posts here, with links to read the full articles. This helps keep your visitors engaged with fresh, valuable content.</p>
             </section>
 
             <!-- Contact Section -->
@@ -83,7 +83,7 @@
         <p>
             <a href="#">Privacy Policy</a> | 
             <a href="#">Terms of Service</a> | 
-            <a href="#">Contact</a>
+            <a href="contact.html">Contact</a>
         </p>
     </footer>
 
@@ -94,7 +94,7 @@
             navMenu.classList.toggle('active');
         }
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for internal anchor links only
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
