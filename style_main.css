@@ -94,26 +94,54 @@ body {
    SHARED COMPONENTS - Used across multiple pages
    ========================================================================== */
 
+
+/* Unified styling for both .hero and .page-header */
+.hero,
 .page-header {
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
     margin: 2rem 0;
     background: linear-gradient(135deg, #006699 0%, #004d73 100%);
     color: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,102,153,0.2);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,102,153,0.2);
 }
 
+.hero h1,
 .page-header h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
     animation: fadeInUp 1s ease;
 }
 
+.hero p,
 .page-header p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
     opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     animation: fadeInUp 1s ease 0.2s both;
+}
+
+/* Mobile responsive for unified blue boxes */
+@media (max-width: 768px) {
+    .hero,
+    .page-header {
+        padding: 3rem 1.5rem;
+    }
+    
+    .hero h1,
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p,
+    .page-header p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+    }
 }
 
 /* ==========================================================================
@@ -160,32 +188,6 @@ body {
 /* ==========================================================================
    HOME PAGE SPECIFIC STYLES
    ========================================================================== */
-
-.hero {
-    text-align: center;
-    padding: 4rem 2rem;
-    margin: 2rem 0;
-    background: linear-gradient(135deg, #006699 0%, #004d73 100%);
-    color: white;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0,102,153,0.2);
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    animation: fadeInUp 1s ease;
-}
-
-.hero p {
-    font-size: 1.3rem;
-    margin-bottom: 2.5rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    animation: fadeInUp 1s ease 0.2s both;
-}
 
 .content-section {
     margin: 4rem 0;
@@ -507,14 +509,7 @@ body {
         padding: 1rem;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
+    
     .content-section h2 {
         font-size: 2rem;
     }
