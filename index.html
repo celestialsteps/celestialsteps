@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title> 
+    <title>Stellar Insights - Professional Astrology Readings & Consultations</title> 
     <link rel="stylesheet" href="style_main.css">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <nav class="nav-container">
-            <a href="index.html" class="logo">Your Logo</a>
+            <a href="index.html" class="logo">Stellar Insights</a>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="blog.html">Blog</a></li>
+                <li><a href="portfolio.html">Testimonials</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
@@ -27,59 +27,59 @@
         <div class="container">
             <!-- Hero Section -->
             <section class="hero" id="home">
-                <h1>Welcome to Your Website</h1>
-                <p>This is a placeholder for your main headline and description. Replace this text with your own compelling message that captures your visitors' attention.</p>
-                <a href="about.html" class="cta-button">Get Started</a>
+                <h1>Unlock the Wisdom of the Stars</h1>
+                <p>Discover your cosmic blueprint with professional astrology readings that illuminate your path, relationships, and life purpose. Get personalized insights from the universe's ancient language.</p>
+                <a href="services.html" class="cta-button">Explore Our Services</a>
             </section>
 
             <!-- About Section -->
             <section class="content-section" id="about">
-                <h2>About Us</h2>
-                <p>This is a placeholder for your about section. Tell your visitors who you are, what you do, and what makes you unique. Share your story, mission, and values here.</p>
-                <p>Add more paragraphs as needed to fully describe your business, organization, or personal brand. This section should help visitors understand what you're all about.</p>
+                <h2>Your Journey to Self-Discovery</h2>
+                <p>Welcome to Stellar Insights, where ancient wisdom meets modern understanding. I'm here to help you navigate life's complexities through the profound language of astrology.</p>
+                <p>With years of experience in chart analysis, relationship compatibility, and predictive astrology, I offer personalized readings that provide clarity, guidance, and empowerment for your unique journey.</p>
             </section>
 
             <!-- Services/Features Section -->
             <section class="content-section" id="services">
-                <h2>Our Services</h2>
+                <h2>Our Astrology Services</h2>
                 <div class="card-grid">
                     <div class="card">
-                        <div class="card-icon">🚀</div>
-                        <h3>Service One</h3>
-                        <p>Description of your first service or feature. Explain the benefits and value you provide to your customers.</p>
+                        <div class="card-icon">🌟</div>
+                        <h3>Birth Chart Readings</h3>
+                        <p>Discover your cosmic blueprint with comprehensive natal chart analysis revealing your personality, purpose, and potential.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">💡</div>
-                        <h3>Service Two</h3>
-                        <p>Description of your second service or feature. Highlight what makes this offering special and valuable.</p>
+                        <div class="card-icon">💫</div>
+                        <h3>Relationship Compatibility</h3>
+                        <p>Explore the dynamics between you and your loved ones with detailed synastry readings and relationship guidance.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">🎯</div>
-                        <h3>Service Three</h3>
-                        <p>Description of your third service or feature. Focus on the outcomes and results your clients can expect.</p>
+                        <div class="card-icon">🔮</div>
+                        <h3>Future Forecasting</h3>
+                        <p>Navigate upcoming opportunities and challenges with predictive astrology and transit analysis for the year ahead.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Blog Section -->
-            <section class="content-section" id="blog">
-                <h2>Latest Blog Posts</h2>
-                <p>Stay updated with our latest insights, news, and articles. This section showcases our most recent blog posts and thought leadership content.</p>
-                <p>You can add previews of your blog posts here, with links to read the full articles. This helps keep your visitors engaged with fresh, valuable content.</p>
+            <!-- Testimonials Preview -->
+            <section class="content-section" id="testimonials">
+                <h2>What Our Clients Say</h2>
+                <p>"The reading was incredibly accurate and insightful. It gave me the clarity I needed to make important life decisions with confidence." - Sarah M.</p>
+                <p>"I was amazed by how much the birth chart revealed about my personality and life patterns. It's like having a roadmap for personal growth." - Michael R.</p>
             </section>
 
             <!-- Contact Section -->
             <section class="content-section" id="contact">
-                <h2>Get In Touch</h2>
-                <p>Ready to work together? This is where you'll include your contact information, contact form, or call-to-action for visitors to reach out.</p>
-                <p>Add your email address, phone number, physical address, or any other relevant contact details. You might also want to include your social media links here.</p>
+                <h2>Begin Your Cosmic Journey</h2>
+                <p>Ready to discover what the stars have to say about your life? Book your personalized astrology reading today and start your journey to greater self-understanding.</p>
+                <p>Contact us to schedule your consultation or ask any questions about our services. We're here to guide you on your path to cosmic wisdom.</p>
             </section>
         </div>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+        <p>&copy; 2025 Stellar Insights. All rights reserved.</p>
         <p>
             <a href="#">Privacy Policy</a> | 
             <a href="#">Terms of Service</a> | 
@@ -118,6 +118,15 @@
             if (!navMenu.contains(e.target) && !toggle.contains(e.target)) {
                 navMenu.classList.remove('active');
             }
+        });
+
+        // Add animation delay to cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.style.animation = 'fadeInUp 0.8s ease forwards';
+            });
         });
     </script>
 </body>
