@@ -158,6 +158,128 @@ body {
 }
 
 /* ==========================================================================
+   HOME PAGE SPECIFIC STYLES
+   ========================================================================== */
+
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    margin: 2rem 0;
+    background: linear-gradient(135deg, #006699 0%, #004d73 100%);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,102,153,0.2);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.content-section {
+    margin: 4rem 0;
+    padding: 0 1rem;
+}
+
+.content-section h2 {
+    color: #006699;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.content-section p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin: 3rem 0;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 25px rgba(0,102,153,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #99ccff, #006699);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,102,153,0.15);
+}
+
+.card:hover::before {
+    transform: scaleX(1);
+}
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #99ccff, #66b3ff);
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #003d5c;
+    box-shadow: 0 6px 20px rgba(153,204,255,0.3);
+    transition: all 0.3s ease;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.1);
+}
+
+.card h3 {
+    color: #006699;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
    SERVICES PAGE SPECIFIC STYLES
    ========================================================================== */
 
@@ -385,7 +507,24 @@ body {
         padding: 1rem;
     }
 
-    .consultation-cta {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .content-section h2 {
+        font-size: 2rem;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .card {
         padding: 2rem;
     }
 }
