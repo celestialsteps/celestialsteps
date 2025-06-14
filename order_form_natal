@@ -7,20 +7,8 @@
     <link rel="stylesheet" href="style_index.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">Stellar Insights</a>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Testimonials</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-        </nav>
-    </header>
+   <!-- Header -->
+    <div id="header-placeholder"></div>
 
     <!-- Main Content -->
     <main class="main-content">
