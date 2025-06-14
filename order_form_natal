@@ -227,15 +227,10 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Stellar Insights. All rights reserved.</p>
-        <p>
-            <a href="#">Privacy Policy</a> | 
-            <a href="#">Terms of Service</a> | 
-            <a href="#">Contact</a>
-        </p>
-    </footer>
+   <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+  <script src="includes/components.js"></script> 
 
     <script>
         // Initialize form elements
@@ -247,12 +242,7 @@
             validateForm();
         });
 
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('active');
-        }
-
+      
         // Populate day options
         function populateDayOptions() {
             const daySelect = document.getElementById('birthDay');
@@ -396,15 +386,7 @@
             document.getElementById('submitButton').disabled = true;
         });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', function(e) {
-            const navMenu = document.querySelector('.nav-menu');
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            
-            if (!navMenu.contains(e.target) && !toggle.contains(e.target)) {
-                navMenu.classList.remove('active');
-            }
-        });
+       
     </script>
 </body>
 </html>
