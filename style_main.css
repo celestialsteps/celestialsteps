@@ -117,7 +117,7 @@ body {
 
 .hero h2,
 .page-header h2 {
-    font-size: 3.0rem;
+    font-size: 2.0rem;
     margin-bottom: 1.5rem;
     animation: fadeInUp 1s ease;
 }
