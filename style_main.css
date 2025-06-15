@@ -136,6 +136,13 @@ body {
     animation: fadeInUp 1s ease;
 }
 
+.hero h5,
+.page-header h5 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInUp 1s ease;
+}
+
 .hero p,
 .page-header p {
     font-size: 1.3rem;
