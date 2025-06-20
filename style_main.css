@@ -202,6 +202,33 @@
                 font-size: 1.1rem;
             }
         }
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+/* Footer */
+.footer {
+    background: var(--text-dark);
+    color: white;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+.footer a {
+    color: var(--primary-light);
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+
 
         /* ==========================================================================
            ANIMATIONS
