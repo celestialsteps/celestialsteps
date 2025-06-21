@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>celestialsteps.com - Professional Astrology Readings & Consultations</title> 
+    <title>celestialsteps.com - Professional Astrology Readings & Consultations</title>
     <link rel="stylesheet" href="style_main.css">
+    <style>
+        /* Fallback footer initially hidden */
+        #fallback-footer {
+            display: none;
+        }
+</style>
 </head>
 <body>
     <!-- Header -->
@@ -84,8 +90,36 @@
 
     <!-- Footer will be loaded here -->
     <div id="footer-placeholder"></div>
+    
+    <!-- Fallback footer in case JavaScript doesn't load -->
+    <footer class="footer" id="fallback-footer">
+        <p>&copy; 2025 Stellar Insights. All rights reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact</a>
+        </p>
+    </footer>
 
     <!-- Load the components -->
     <script src="includes/components.js"></script>
+    <script>
+        // Fallback script to ensure footer shows
+        document.addEventListener('DOMContentLoaded', function() {
+            // Wait a bit to see if the footer loaded via components.js
+            setTimeout(function() {
+                const footerPlaceholder = document.getElementById('footer-placeholder');
+                const fallbackFooter = document.getElementById('fallback-footer');
+                
+                // If the placeholder is empty, show the fallback footer
+                if (footerPlaceholder && footerPlaceholder.innerHTML.trim() === '') {
+                    fallbackFooter.style.display = 'block';
+                } else {
+                    // Hide fallback if the footer loaded successfully
+                    fallbackFooter.style.display = 'none';
+                }
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
