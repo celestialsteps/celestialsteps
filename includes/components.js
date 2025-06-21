@@ -1,84 +1,102 @@
-// includes/components.js
 document.addEventListener('DOMContentLoaded', function() {
     // Load header
-    fetch('./includes/header.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('header-placeholder').innerHTML = html;
-            // Initialize mobile menu functionality after header loads
-            initializeMobileMenu();
-        })
-        .catch(error => console.error('Error loading header:', error));
-    
-    // Load footer
-    fetch('./includes/footer.html')
-        .then(response => response.text())
-        .then(html => {
-            document.getElementById('footer-placeholder').innerHTML = html;
-        })
-        .catch(error => console.error('Error loading footer:', error));
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    if (headerPlaceholder) {
+        fetch('./includes/header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(html => {
+                headerPlaceholder.innerHTML = html;
+                initializeMobileMenu();
+                setActiveNavItem();
+            })
+            .catch(error => {
+                console.error('Error loading header:', error);
+                // Fallback: Show a simple header if the fetch fails
+                headerPlaceholder.innerHTML = `
+                    <header class="header">
+                        <nav class="nav-container">
+                            <a href="#" class="logo">Celestialsteps.com</a>
+                            <ul class="nav-menu">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </header>
+                `;
+            });
+    }
 
-    // Initialize card animations (your existing code)
+    // Load footer (only if footer-placeholder exists and no content yet)
+    const footerPlaceholder = document.getElementById('footer-placeholder');
+    if (footerPlaceholder && footerPlaceholder.innerHTML.trim() === '') {
+        fetch('./includes/footer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(html => {
+                footerPlaceholder.innerHTML = html;
+                // Hide the fallback footer if we successfully loaded the dynamic one
+                const mainFooter = document.getElementById('main-footer');
+                if (mainFooter) mainFooter.style.display = 'none';
+            })
+            .catch(error => {
+                console.error('Error loading footer:', error);
+            });
+    }
+
+    // Initialize animations
     initializeCardAnimations();
 });
 
-// Mobile menu toggle functionality (your existing function)
+// Mobile menu toggle function
 function toggleMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
-    navMenu.classList.toggle('active');
+    if (navMenu) navMenu.classList.toggle('active');
 }
 
-// Initialize all mobile menu functionality
+// Initialize mobile menu functionality
 function initializeMobileMenu() {
-    // Smooth scrolling for internal anchor links only (your existing code)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-            // Close mobile menu after clicking
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
             const navMenu = document.querySelector('.nav-menu');
-            if (navMenu) {
+            if (navMenu && navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
             }
         });
     });
 
-    // Close mobile menu when clicking outside (your existing code)
+    // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
         const navMenu = document.querySelector('.nav-menu');
         const toggle = document.querySelector('.mobile-menu-toggle');
         
-        if (navMenu && toggle && !navMenu.contains(e.target) && !toggle.contains(e.target)) {
+        if (navMenu && navMenu.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            (!toggle || !toggle.contains(e.target))) {
             navMenu.classList.remove('active');
         }
     });
 }
 
-// Add animation delay to cards (your existing code)
-function initializeCardAnimations() {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-        card.style.animationDelay = `${index * 0.1}s`;
-        card.style.animation = 'fadeInUp 0.8s ease forwards';
+// Set active navigation item
+function setActiveNavItem() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        const href = link.getAttribute('href');
+        link.classList.toggle('active', href === currentPage);
     });
 }
 
-// Optional: Set active navigation item based on current page
-function setActiveNavItem() {
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        link.classList.remove('active');
-        if (href === currentPage) {
-            link.classList.add('active');
-        }
+// Card animations
+function initializeCardAnimations() {
+    document.querySelectorAll('.card').forEach((card, index) => {
+        card.style.animation = `fadeInUp 0.8s ease ${index * 0.1}s forwards`;
     });
 }
