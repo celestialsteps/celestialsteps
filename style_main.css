@@ -1,4 +1,4 @@
-==========================================================================
+           ==========================================================================
            GLOBAL STYLES - Used across all pages
            ========================================================================== */
            :root {
@@ -24,6 +24,31 @@
         h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-heading);
         }
+
+
+
+/* Add smooth page transitions */
+body {
+    font-family: var(--font-body);
+    line-height: 1.7;
+    color: #333;
+    background-color: #f8f9fa;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Prevent flash during component loading */
+#header-placeholder,
+#footer-placeholder {
+    min-height: 1px; /* Prevents layout shift */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#header-placeholder.loaded,
+#footer-placeholder.loaded {
+    opacity: 1;
+}
 
         /* ==========================================================================
            HEADER STYLES - Shared across all pages
