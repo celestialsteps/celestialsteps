@@ -1,10 +1,10 @@
 ==========================================================================
            GLOBAL STYLES - Used across all pages
            ========================================================================== */
-:root {
-  --font-heading: 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'Inter', sans-serif;
-}
+           :root {
+             --font-heading: 'Plus Jakarta Sans', sans-serif;
+             --font-body: 'Inter', sans-serif;
+           }
 
         * {
             margin: 0;
@@ -97,12 +97,6 @@
 .nav-menu a:hover::after,
 .nav-menu a.active::after {
     width: 80%;
-}
-
-/* Optional: Add a subtle glow effect to the underline */
-.nav-menu a:hover::after,
-.nav-menu a.active::after {
-    box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
 }
 
 
