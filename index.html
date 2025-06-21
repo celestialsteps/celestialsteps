@@ -5,9 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>celestialsteps.com - Professional Astrology Readings & Consultations</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Inter:wght@400;500&display=swap" as="style">
+    <link rel="preload" href="images/cover_image_small.png" as="image">
+    <link rel="preload" href="includes/header.html" as="fetch" crossorigin>
+    <link rel="preload" href="includes/footer.html" as="fetch" crossorigin>
+    
+    <!-- Load fonts first -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Link to your main stylesheet -->
     <link rel="stylesheet" href="style_main.css">
+    
+    <!-- Critical CSS to prevent flash -->
+    <style>
+        /* Prevent flash of unstyled content */
+        body {
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        body.loaded {
+            opacity: 1;
+        }
+        
+        /* Prevent layout shift during component loading */
+        #header-placeholder {
+            height: 80px;
+            background: linear-gradient(135deg, #006699 0%, #004d73 100%);
+        }
+        
+        #footer-placeholder {
+            min-height: 200px;
+            background: #333;
+        }
+        
+        /* Hide placeholders during loading */
+        .loading #header-placeholder,
+        .loading #footer-placeholder {
+            visibility: hidden;
+        }
+        
+        /* Show components when loaded */
+        .components-loaded #header-placeholder,
+        .components-loaded #footer-placeholder {
+            visibility: visible;
+            height: auto;
+            min-height: auto;
+        }
+    </style>
 </head>
-    <body>
+<body class="loading">
     <!-- Header -->
     <div id="header-placeholder"></div>
 
