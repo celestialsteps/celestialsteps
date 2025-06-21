@@ -25,9 +25,7 @@
         <div class="container">
             <!-- Hero Section -->
             <section class="hero" id="home">
-                <div style="width: 400px; height: 400px; background: linear-gradient(135deg, #006699, #004d73); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; box-shadow: 0 8px 25px rgba(0,0,0,0.3); flex-shrink: 0;">
-                    Hero Image Placeholder
-                </div>
+                <img src="images/cover_image_small.png" alt="Celestial Steps" class="hero-image">
 
                 <div class="hero-content">
                     <h1>Celestial Steps</h1>
@@ -84,37 +82,10 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Stellar Insights. All rights reserved.</p>
-        <p>
-            <a href="#">Privacy Policy</a> | 
-            <a href="#">Terms of Service</a> | 
-            <a href="#">Contact</a>
-        </p>
-    </footer>
+    <!-- Footer will be loaded here -->
+    <div id="footer-placeholder"></div>
 
-    <script>
-        // Smooth scrolling for internal anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add animation delay to cards
-        const cards = document.querySelectorAll('.card');
-        cards.forEach((card, index) => {
-            card.style.animationDelay = `${index * 0.1}s`;
-            card.style.animation = 'fadeInUp 0.8s ease forwards';
-        });
-    </script>
+    <!-- Load the components -->
+    <script src="includes/components.js"></script>
 </body>
 </html>
