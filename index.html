@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,9 @@
     <title>celestialsteps.com - Professional Astrology Readings & Consultations</title>
     <link rel="stylesheet" href="style_main.css">
     <style>
-        /* Fallback footer initially hidden */
+        /* Fallback footer visible by default */
         #fallback-footer {
-            display: none;
+            display: block;
         }
 </style>
 </head>
@@ -91,8 +92,8 @@
     <!-- Footer will be loaded here -->
     <div id="footer-placeholder"></div>
     
-    <!-- Fallback footer in case JavaScript doesn't load -->
-    <footer class="footer" id="fallback-footer">
+    <!-- Main footer - always visible -->
+    <footer class="footer" id="main-footer">
         <p>&copy; 2025 Stellar Insights. All rights reserved.</p>
         <p>
             <a href="#">Privacy Policy</a> | 
@@ -101,24 +102,21 @@
         </p>
     </footer>
 
-    <!-- Load the components -->
+    <!-- Load the components (optional) -->
     <script src="includes/components.js"></script>
     <script>
-        // Fallback script to ensure footer shows
+        // Optional: If you want to replace with loaded footer content
         document.addEventListener('DOMContentLoaded', function() {
-            // Wait a bit to see if the footer loaded via components.js
+            // Try to load footer via components.js if it exists
             setTimeout(function() {
                 const footerPlaceholder = document.getElementById('footer-placeholder');
-                const fallbackFooter = document.getElementById('fallback-footer');
+                const mainFooter = document.getElementById('main-footer');
                 
-                // If the placeholder is empty, show the fallback footer
-                if (footerPlaceholder && footerPlaceholder.innerHTML.trim() === '') {
-                    fallbackFooter.style.display = 'block';
-                } else {
-                    // Hide fallback if the footer loaded successfully
-                    fallbackFooter.style.display = 'none';
+                // If components.js loaded content, hide the main footer
+                if (footerPlaceholder && footerPlaceholder.innerHTML.trim() !== '') {
+                    mainFooter.style.display = 'none';
                 }
-            }, 1000);
+            }, 500);
         });
     </script>
 </body>
