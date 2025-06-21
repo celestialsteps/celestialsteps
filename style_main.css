@@ -73,6 +73,7 @@
     transition: all 0.3s ease;
     font-size: 1.4rem;  
     position: relative;
+}
 
        .nav-menu a:hover,
 .nav-menu a.active {
