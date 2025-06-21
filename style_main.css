@@ -100,6 +100,74 @@
 }
 
 
+/* ==========================================================================
+   MOBILE MENU FIX - Add this to your style_main.css
+   ========================================================================== */
+
+/* Hide mobile menu toggle on desktop */
+.mobile-menu-toggle {
+    display: none;
+}
+
+/* Mobile menu styles - only show toggle on small screens */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        z-index: 1001;
+    }
+    
+    /* Hide regular navigation on mobile */
+    .nav-menu {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #006699 0%, #004d73 100%);
+        flex-direction: column;
+        padding: 2rem 0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+    
+    /* Show menu when active */
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-menu li {
+        margin: 0;
+        text-align: center;
+    }
+    
+    .nav-menu a {
+        display: block;
+        padding: 1rem 2rem;
+        font-size: 1.2rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    .nav-menu a:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Ensure desktop navigation is always visible on larger screens */
+@media (min-width: 769px) {
+    .nav-menu {
+        display: flex !important;
+    }
+    
+    .mobile-menu-toggle {
+        display: none !important;
+    }
+}
+
         /* ==========================================================================
            MAIN CONTENT - Shared layout
            ========================================================================== */
