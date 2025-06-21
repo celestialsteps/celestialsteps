@@ -1,4 +1,5 @@
- /* ==========================================================================
+
+        /* ==========================================================================
            GLOBAL STYLES - Used across all pages
            ========================================================================== */
 
@@ -9,7 +10,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f8f9fa;
@@ -339,3 +340,4 @@
             font-size: 1rem;
             line-height: 1.6;
         }
+    </style>
