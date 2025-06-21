@@ -26,17 +26,7 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">celestialsteps.com</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -103,32 +93,7 @@
     <!-- Footer will be loaded here -->
     <div id="footer-placeholder"></div>
     
-    <!-- Main footer - always visible -->
-    <footer class="footer" id="main-footer">
-        <p>&copy; 2025 Stellar Insights. All rights reserved.</p>
-        <p>
-            <a href="#">Privacy Policy</a> | 
-            <a href="#">Terms of Service</a> | 
-            <a href="#">Contact</a>
-        </p>
-    </footer>
-
-    <!-- Load the components (optional) -->
+       <!-- Load the components (optional) -->
     <script src="includes/components.js"></script>
-    <script>
-        // Optional: If you want to replace with loaded footer content
-        document.addEventListener('DOMContentLoaded', function() {
-            // Try to load footer via components.js if it exists
-            setTimeout(function() {
-                const footerPlaceholder = document.getElementById('footer-placeholder');
-                const mainFooter = document.getElementById('main-footer');
-                
-                // If components.js loaded content, hide the main footer
-                if (footerPlaceholder && footerPlaceholder.innerHTML.trim() !== '') {
-                    mainFooter.style.display = 'none';
-                }
-            }, 500);
-        });
-    </script>
 </body>
 </html>
