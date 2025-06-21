@@ -57,27 +57,54 @@
             color: white;
         }
 
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
+     /* Navigation menu styles */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
 
-        .nav-menu a {
-            font-family: var(--font-body);
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-            font-size: 1.4rem;
-        }
+.nav-menu a {
+    font-family: var(--font-body);
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 1.4rem;
+    position: relative;
+}
 
-        .nav-menu a:hover,
-        .nav-menu a.active {
-            background-color: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
-        }
+       .nav-menu a:hover,
+.nav-menu a.active {
+    background-color: transparent;
+    transform: translateY(-2px);
+}
+
+/* Add underline effect */
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #ffcc00;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 80%;
+}
+
+/* Optional: Add a subtle glow effect to the underline */
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    box-shadow: 0 0 8px rgba(255, 204, 0, 0.6);
+}
+
 
         /* ==========================================================================
            MAIN CONTENT - Shared layout
