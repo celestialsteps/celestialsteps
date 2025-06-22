@@ -223,21 +223,19 @@ html {
             font-family: var(--font-heading);
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
-            animation: fadeInUp 1s ease;
         }
 
         .hero-content h2 {
             font-family: var(--font-heading);
             font-size: 2.0rem;
             margin-bottom: 0.5rem;
-            animation: fadeInUp 1s ease 0.1s both;
+           
         }
 
         .hero-content h3 {
             font-family: var(--font-heading);
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
-            animation: fadeInUp 1s ease 0.2s both;
             font-style: italic;
         }
 
@@ -245,7 +243,7 @@ html {
             font-family: var(--font-heading);
             font-size: 2.0rem;
             margin-bottom: 1rem;
-            animation: fadeInUp 1s ease 0.3s both;
+            
         }
 
         .hero-content h5 {
@@ -272,8 +270,7 @@ html {
             font-size: 1.1rem;
             transition: all 0.3s ease;
             display: inline-block;
-            animation: fadeInUp 1s ease 0.5s both;
-        }
+                    }
 
         .cta-button:hover {
             background: #e6b800;
