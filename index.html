@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>celestialsteps.com | Astrology reports and consultations</title>
-    <link rel="preload" href="style_main.css" as="style">
-    <link rel="stylesheet" href="style_main.css">
+    <!-- Improved CSS loading (avoids FOUC) -->
+    <link rel="preload" href="style_main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style_main.css"></noscript>
+    <!-- Optional: Inline critical CSS (even faster) -->
+    <style>
+      /* Add minimal critical styles here (e.g., body background, layout) */
+      body { opacity: 0; } /* Hide until CSS loads */
+    </style>
 </head>
 <body>
     <!-- Header -->
