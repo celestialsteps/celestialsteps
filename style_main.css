@@ -223,6 +223,7 @@ html {
             font-family: var(--font-heading);
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
+            color: #006699;       
         }
 
         .hero-content h2 {
@@ -237,14 +238,14 @@ html {
             font-family: var(--font-heading);
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
-            color: #333333
+            color: #006699;  
             font-style: italic;
         }
 
         .hero-content h4 {
             font-family: var(--font-heading);
             font-size: 2.0rem;
-            color: #333333
+            color: #006699;  
             margin-bottom: 1rem;
             
         }
@@ -256,7 +257,7 @@ html {
             font-weight: normal; 
             font-style: italic;
             opacity: 0.9;
-            color: #333333
+            color: #006699;  
             line-height: 1.8;
         }
 
