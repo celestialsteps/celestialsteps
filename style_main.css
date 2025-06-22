@@ -1,10 +1,10 @@
            ==========================================================================
            GLOBAL STYLES - Used across all pages
            ========================================================================== */
-           :root {
-             --font-heading: 'Plus Jakarta Sans', sans-serif;
-             --font-body: 'Inter', sans-serif;
-           }
+          :root {
+  --font-heading: 'Poppins', sans-serif;    /* Updated to Poppins */
+  --font-body: 'Poppins', sans-serif;      /* Or keep 'Inter' for body if preferred */
+}
 
         * {
             margin: 0;
