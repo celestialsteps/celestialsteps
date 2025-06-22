@@ -250,7 +250,6 @@ html {
             font-family: var(--font-body);
             font-size: 1.2rem;
             margin-bottom: 2rem;
-            animation: fadeInUp 1s ease 0.4s both;
             font-weight: normal; 
             font-style: italic;
             opacity: 0.9;
@@ -268,8 +267,7 @@ html {
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            transition: all 0.3s ease;
-            display: inline-block;
+             display: inline-block;
                     }
 
         .cta-button:hover {
