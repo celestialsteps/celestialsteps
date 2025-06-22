@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>celestialsteps.com | Astrology reports and consultations</title>
-    <!-- Improved CSS loading (avoids FOUC) -->
+    <!-- Preload CSS and force early rendering -->
     <link rel="preload" href="style_main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="style_main.css"></noscript>
-    <!-- Optional: Inline critical CSS (even faster) -->
-    <style>
-      /* Add minimal critical styles here (e.g., body background, layout) */
-      body { opacity: 0; } /* Hide until CSS loads */
-    </style>
+    <!-- Small inline script to handle FOUC -->
+    <script>
+      // Temporarily hide body until CSS loads (avoids flash)
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.style.opacity = '0';
+        setTimeout(function() {
+          document.body.style.opacity = '1';
+        }, 100); // Short delay to ensure CSS is ready
+      });
+    </script>
 </head>
 <body>
     <!-- Header -->
