@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preload" href="style_main.css" as="style">
-    <link rel="preload" href="includes/components.js" as="script">
-    
+       
     <!-- Load fonts first -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,26 +26,22 @@
 <body>
     <!-- Your content -->
     
-    <script>
-        // Wait for fonts to load before showing content
-        document.fonts.ready.then(function() {
-            document.body.style.opacity = '1';
-            document.body.style.transition = 'opacity 0.3s ease';
-        });
-        
-        // Fallback in case fonts don't load
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                if (document.body.style.opacity === '0') {
-                    document.body.style.opacity = '1';
-                }
-            }, 1000);
-        });
-    </script>
-</body>
+  </body>
 <body>
   <!-- Header -->
-    <div id="header-placeholder"></div>
+    <header class="header">
+    <nav class="nav-container">
+        <a href="index.html" class="logo">Celestialsteps.com</a>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+    </nav>
+</header>
 
     <!-- Main Content -->
     <main class="main-content">
