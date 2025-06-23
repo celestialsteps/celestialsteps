@@ -1,36 +1,46 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Load header
-    const headerPlaceholder = document.getElementById('header-placeholder');
-    if (headerPlaceholder) {
-        fetch('./includes/header.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.text();
-            })
-            .then(html => {
-                headerPlaceholder.innerHTML = html;
-                initializeMobileMenu();
-                setActiveNavItem();
-            })
-            .catch(error => {
-                console.error('Error loading header:', error);
-                // Fallback: Show a simple header if the fetch fails
-                headerPlaceholder.innerHTML = `
-                    <header class="header">
-                        <nav class="nav-container">
-                            <a href="#" class="logo">Celestialsteps.com</a>
-                            <ul class="nav-menu">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                        </nav>
-                    </header>
-                `;
-            });
-    }
+// Immediately show a skeleton header to prevent flash
+const headerPlaceholder = document.getElementById('header-placeholder');
+if (headerPlaceholder && headerPlaceholder.innerHTML.trim() === '') {
+    headerPlaceholder.innerHTML = `
+        <header class="header">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">Celestialsteps.com</a>
+                <div class="header-loader" style="
+                    width: 100%;
+                    height: 2px;
+                    background: rgba(255,255,255,0.2);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    overflow: hidden;
+                ">
+                    <div style="
+                        width: 100%;
+                        height: 100%;
+                        background: #ffcc00;
+                        animation: headerLoading 1.5s ease-in-out infinite;
+                        position: absolute;
+                    "></div>
+                </div>
+            </nav>
+        </header>
+    `;
+}
 
+// Keyframes for loading animation
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes headerLoading {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+`;
+document.head.appendChild(style);
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Load full header
+    loadFullHeader();
+    
     // Load footer (only if footer-placeholder exists and no content yet)
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder && footerPlaceholder.innerHTML.trim() === '') {
@@ -53,6 +63,42 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize animations
     initializeCardAnimations();
 });
+
+function loadFullHeader() {
+    const headerPlaceholder = document.getElementById('header-placeholder');
+    if (headerPlaceholder) {
+        fetch('./includes/header.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.text();
+            })
+            .then(html => {
+                headerPlaceholder.innerHTML = html;
+                initializeMobileMenu();
+                setActiveNavItem();
+            })
+            .catch(error => {
+                console.error('Error loading header:', error);
+                // Fallback: Show a simple header if the fetch fails
+                headerPlaceholder.innerHTML = `
+                    <header class="header">
+                        <nav class="nav-container">
+                            <a href="index.html" class="logo">Celestialsteps.com</a>
+                            <ul class="nav-menu">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html">About</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
+                        </nav>
+                    </header>
+                `;
+                initializeMobileMenu();
+                setActiveNavItem();
+            });
+    }
+}
 
 // Mobile menu toggle function
 function toggleMobileMenu() {
