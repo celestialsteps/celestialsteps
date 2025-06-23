@@ -20,38 +20,52 @@
     
     <!-- Anti-flash styles -->
     <style>
-        /* Prevent flash by hiding content initially */
-        .preload * {
-            transition: none !important;
-            animation: none !important;
-        }
-        
-        body { 
-            opacity: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f8f9fa;
-            transition: opacity 0.4s ease-in-out;
-        }
-        
-        body.loaded {
-            opacity: 1;
-        }
-        
-        #header-placeholder {
-            min-height: 60px;
-            background: linear-gradient(135deg, #006699 0%, #004d73 100%);
-        }
-        
-        /* Prevent layout shift for hero image */
-        .hero-image {
-            max-width: 100%;
-            height: auto;
-        }
-    </style>
+    /* Prevent flash by hiding content initially */
+    .preload * {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    body { 
+        opacity: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa;
+        transition: opacity 0.4s ease-in-out;
+    }
+    
+    body.loaded {
+        opacity: 1;
+    }
+    
+    #header-placeholder {
+        min-height: 60px;
+        background: linear-gradient(135deg, #006699 0%, #004d73 100%);
+    }
+    
+    /* Prevent layout shift for hero image */
+    .hero-image {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
 </head>
 <body class="preload">
-    <!-- Header -->
-    <div id="header-placeholder"></div>
+      <!-- NEW - Single header with skeleton -->
+<div id="header-placeholder">
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo-skeleton">Celestialsteps.com</a>
+            <ul class="nav-skeleton">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <div class="header-loading"></div>
+        </nav>
+    </header>
+</div>
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
@@ -121,38 +135,70 @@
     <script src="includes/components.js"></script>
 
 <!-- Anti-flash script - ADD THIS BEFORE </body> -->
-    <script>
-        // Remove preload class to enable transitions
-        function enableTransitions() {
-            document.body.classList.remove('preload');
-            document.body.classList.add('loaded');
-        }
-        
-        // Wait for fonts and DOM to be ready
-        Promise.all([
-            document.fonts.ready,
-            new Promise(resolve => {
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', resolve);
-                } else {
-                    resolve();
-                }
-            })
-        ]).then(() => {
-            // Small delay to ensure everything is painted
-            setTimeout(enableTransitions, 100);
-        }).catch(() => {
-            // Fallback if promises fail
-            enableTransitions();
+   // components.js - Updated to work with coordinated loading
+
+// This file is now optional since loading is handled inline
+// But keeping it for backward compatibility
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Only run if inline loading hasn't already handled everything
+    if (!document.body.classList.contains('loaded')) {
+        // Initialize any remaining functionality
+        initializeCardAnimations();
+    }
+});
+
+// Card animations - enhanced version
+function initializeCardAnimations() {
+    const cards = document.querySelectorAll('.card');
+    if (cards.length === 0) return;
+    
+    // Use Intersection Observer for better performance
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = `fadeInUp 0.8s ease ${index * 0.1}s forwards`;
+                observer.unobserve(entry.target);
+            }
         });
-        
-        // Absolute fallback after 1 second
-        setTimeout(enableTransitions, 1000);
-        
-        // Also trigger on window load as additional safety
-        window.addEventListener('load', () => {
-            setTimeout(enableTransitions, 50);
+    }, {
+        threshold: 0.1,
+        rootMargin: '50px'
+    });
+    
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+}
+
+// Smooth page transitions (optional enhancement)
+function initializePageTransitions() {
+    const links = document.querySelectorAll('a[href^="./"], a[href^="/"], a[href$=".html"]');
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Skip if it's an anchor link or external link
+            if (href.startsWith('#') || href.startsWith('http') || href.includes('mailto')) {
+                return;
+            }
+            
+            e.preventDefault();
+            
+            // Add fade out effect
+            document.body.style.opacity = '0.7';
+            document.body.style.transition = 'opacity 0.2s ease-out';
+            
+            // Navigate after short delay
+            setTimeout(() => {
+                window.location.href = href;
+            }, 150);
         });
-    </script>
+    });
+}
+
+// Call page transitions if desired
+// initializePageTransitions();
 </body>
 </html>
