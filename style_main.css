@@ -765,3 +765,32 @@ html {
         font-size: 1.8rem;
     }
 }
+
+
+/* ==========================================================================
+   LOADING ANIMATIONS & FONT SMOOTHING
+   ========================================================================== */
+
+/* Add these fade-in animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure smooth font rendering */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
