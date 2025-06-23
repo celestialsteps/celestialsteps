@@ -1,152 +1,90 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="style_main.css" as="style">
-    <link rel="preload" href="includes/components.js" as="script">
     
     <!-- Load fonts first -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Load CSS normally -->
+      <!-- Load the components -->
+    <script src="includes/components.js"></script>
+    <!-- Load CSS -->
     <link rel="stylesheet" href="style_main.css">
     
     <title>celestialsteps.com | Astrology reports and consultations</title>
     
-    <!-- Hide body until fonts are loaded -->
-    <style>
-    body { 
-        opacity: 0;
-        font-family: 'Poppins', sans-serif;
-        background-color: #f8f9fa; /* Match your body background */
-    }
-    #header-placeholder {
-        min-height: 60px; /* Approximate header height */
-        background: linear-gradient(135deg, #006699 0%, #004d73 100%);
-    }
-
-            #header-placeholder {
-        min-height: 60px; /* Approximate header height */
-        background: linear-gradient(135deg, #006699 0%, #004d73 100%);
-    }
-           <script>
-        // Wait for fonts to load before showing content
-        document.fonts.ready.then(function() {
-            document.body.style.opacity = '1';
-            document.body.style.transition = 'opacity 0.5s ease';
-        }).catch(() => {
-            // If fonts fail to load, still show content
-            document.body.style.opacity = '1';
-            document.body.style.transition = 'opacity 0.5s ease';
-        });
-
-        // Fallback in case fonts don't load within 1 second
-        setTimeout(function() {
-            if (document.body.style.opacity === '0') {
-                document.body.style.opacity = '1';
-                document.body.style.transition = 'opacity 0.5s ease';
-            }
-        }, 1000);
-
-        
-</style>
-</head>
-<body>
-    <!-- Your content -->
-    
-    <script>
-        // Wait for fonts to load before showing content
-        document.fonts.ready.then(function() {
-            document.body.style.opacity = '1';
-            document.body.style.transition = 'opacity 0.3s ease';
-        });
-        
-        // Fallback in case fonts don't load
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                if (document.body.style.opacity === '0') {
-                    document.body.style.opacity = '1';
-                }
-            }, 1000);
-        });
-    </script>
-</body>
+   </head>
 <body>
     <!-- Header -->
-    <div id="header-placeholder"></div>
-    
+     <div id="header-placeholder"></div>
+
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
-            <section class="page-header">
-                <h1>About Your Cosmic Guide</h1>
-                <p>Discover the journey that led me to become your trusted astrology consultant and spiritual advisor.</p>
-           </section>
-            <!-- Personal Story Section -->
-            <section class="content-section">
-                <h2>My Journey to the Stars</h2>
-                <p>My fascination with astrology began during a pivotal moment in my early twenties when I was searching for deeper meaning and direction in life. What started as curiosity about my own birth chart quickly evolved into a profound calling to help others discover their cosmic blueprint.</p>
-                
-                <p>Over the past decade, I've dedicated myself to mastering the ancient art of astrology through intensive study, mentorship with renowned astrologers, and thousands of hours analyzing charts. My approach combines traditional astrological wisdom with modern psychological insights, creating readings that are both deeply spiritual and practically applicable.</p>
+            <!-- Hero Section -->
+            <section class="hero" id="home">
+                <img src="images/cover_image_small.png" alt="Celestial Steps" class="hero-image">
+                <div class="hero-content">
+                    <h1>Celestial Steps</h1>
+                    <h2>The companion to your astrological journey</h2>
+                    <h3>"Learn, discover, grow"</h3>
+                    <h4>Astrology interpretations, consultations, lessons & content</h4>
+                    <h5>Discover your cosmic blueprint with professional astrology readings that illuminate your path, relationships, and life purpose. Get personalized insights from the universe's ancient language.</h5>
+                    <a href="services.html" class="cta-button">Explore Our Services</a>
+                </div>
             </section>
 
-            <!-- Credentials & Experience -->
-            <section class="content-section">
-                <h2>Professional Background</h2>
+            <!-- About Section -->
+            <section class="content-section" id="about">
+                <h2>Your Journey to Self-Discovery</h2>
+                <p>Welcome to Stellar Insights, where ancient wisdom meets modern understanding. I'm here to help you navigate life's complexities through the profound language of astrology.</p>
+                <p>With years of experience in chart analysis, relationship compatibility, and predictive astrology, I offer personalized readings that provide clarity, guidance, and empowerment for your unique journey.</p>
+            </section>
+
+            <!-- Services/Features Section -->
+            <section class="content-section" id="services">
+                <h2>Our Astrology Services</h2>
                 <div class="card-grid">
                     <div class="card">
-                        <div class="card-icon">📚</div>
-                        <h3>Education & Certification</h3>
-                        <p>Certified Professional Astrologer with advanced training in psychological astrology, predictive techniques, and relationship counseling through astrology.</p>
+                        <div class="card-icon">🌟</div>
+                        <h3>Birth Chart Readings</h3>
+                        <p>Discover your cosmic blueprint with comprehensive natal chart analysis revealing your personality, purpose, and potential.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">⭐</div>
-                        <h3>10+ Years Experience</h3>
-                        <p>Over a decade of practice with more than 2,000 individual readings, workshops, and consultations helping clients navigate life's challenges.</p>
+                        <div class="card-icon">💫</div>
+                        <h3>Relationship Compatibility</h3>
+                        <p>Explore the dynamics between you and your loved ones with detailed synastry readings and relationship guidance.</p>
                     </div>
                     <div class="card">
-                        <div class="card-icon">🎯</div>
-                        <h3>Specialized Training</h3>
-                        <p>Advanced certifications in natal chart interpretation, synastry analysis, transit forecasting, and evolutionary astrology approaches.</p>
+                        <div class="card-icon">🔮</div>
+                        <h3>Future Forecasting</h3>
+                        <p>Navigate upcoming opportunities and challenges with predictive astrology and transit analysis for the year ahead.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Philosophy & Approach -->
-            <section class="content-section">
-                <h2>My Astrological Philosophy</h2>
-                <p>I believe astrology is a powerful tool for self-awareness and personal empowerment. Rather than viewing the stars as fixed destiny, I see them as a cosmic language that reveals your inherent potential, natural talents, and the timing of opportunities for growth.</p>
-                
-                <p>My readings focus on practical guidance that you can apply immediately to improve your relationships, career decisions, and personal development. I create a safe, non-judgmental space where you can explore your deepest questions and receive honest, compassionate insights.</p>
-                
-                <p>Every chart tells a unique story, and I'm honored to help you understand yours. Whether you're facing a major life transition, seeking relationship clarity, or simply curious about your cosmic nature, I'm here to illuminate your path forward.</p>
+            <!-- Testimonials Preview -->
+            <section class="content-section" id="testimonials">
+                <h2>What Our Clients Say</h2>
+                <p>"The reading was incredibly accurate and insightful. It gave me the clarity I needed to make important life decisions with confidence." - Sarah M.</p>
+                <p>"I was amazed by how much the birth chart revealed about my personality and life patterns. It's like having a roadmap for personal growth." - Michael R.</p>
             </section>
 
-            <!-- Personal Touch -->
-            <section class="content-section">
-                <h2>Beyond the Charts</h2>
-                <p>When I'm not interpreting planetary movements, you'll find me studying ancient mythology, practicing meditation, or exploring nature to stay connected to the rhythms that govern our universe. I'm a lifelong learner who continues to deepen my understanding of astrology's rich traditions while staying current with modern developments in the field.</p>
-                
-                <p>I'm passionate about making astrology accessible and relevant to modern life. My goal is to help you feel empowered by your cosmic insights, not overwhelmed by them. Every session is tailored to your specific needs and questions, ensuring you leave with practical wisdom you can immediately apply.</p>
-            </section>
-
-            <!-- Call to Action -->
-            <section class="content-section">
-                <h2>Ready to Connect?</h2>
-                <p>I'm here to support you on your journey of self-discovery and cosmic understanding. Whether you're new to astrology or a seasoned enthusiast, I'd love to help you unlock the wisdom hidden in your birth chart.</p>
-                
-                <p>Book your personalized reading today and discover what the stars have been waiting to tell you about your life's purpose, relationships, and the opportunities ahead.</p>
-                
-                <a href="services.html" class="cta-button">Book Your Reading</a>
+            <!-- Contact Section -->
+            <section class="content-section" id="contact">
+                <h2>Begin Your Cosmic Journey</h2>
+                <p>Ready to discover what the stars have to say about your life? Book your personalized astrology reading today and start your journey to greater self-understanding.</p>
+                <p>Contact us to schedule your consultation or ask any questions about our services. We're here to guide you on your path to cosmic wisdom.</p>
             </section>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer will be loaded here -->
     <div id="footer-placeholder"></div>
-    <script src="includes/components.js"></script>
+    
+
 </body>
 </html>
