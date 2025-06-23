@@ -97,6 +97,23 @@
     <!-- Footer will be loaded here -->
     <div id="footer-placeholder"></div>
     
-
+<script>
+        // Wait for fonts to load before showing content
+        document.fonts.ready.then(function() {
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'opacity 0.3s ease';
+        });
+        
+        // Fallback in case fonts don't load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (document.body.style.opacity === '0') {
+                    document.body.style.opacity = '1';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>
