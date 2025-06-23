@@ -16,7 +16,43 @@
     
     <title>celestialsteps.com | Astrology reports and consultations</title>
     
+    <!-- Hide body until fonts are loaded -->
+    <style>
+    body { 
+        opacity: 0;
+        font-family: 'Poppins', sans-serif;
+        background-color: #f8f9fa; /* Match your body background */
+    }
+    #header-placeholder {
+        min-height: 60px; /* Approximate header height */
+        background: linear-gradient(135deg, #006699 0%, #004d73 100%);
+    }
 
+            #header-placeholder {
+        min-height: 60px; /* Approximate header height */
+        background: linear-gradient(135deg, #006699 0%, #004d73 100%);
+    }
+           <script>
+        // Wait for fonts to load before showing content
+        document.fonts.ready.then(function() {
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'opacity 0.5s ease';
+        }).catch(() => {
+            // If fonts fail to load, still show content
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'opacity 0.5s ease';
+        });
+
+        // Fallback in case fonts don't load within 1 second
+        setTimeout(function() {
+            if (document.body.style.opacity === '0') {
+                document.body.style.opacity = '1';
+                document.body.style.transition = 'opacity 0.5s ease';
+            }
+        }, 1000);
+
+        
+</style>
 </head>
 <body>
     <!-- Header -->
