@@ -473,7 +473,9 @@ html {
 .page-header {
     text-align: center;
     margin: 3rem 0 4rem;
-    padding: 2rem 1rem;
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, rgba(0,102,153,0.05), rgba(153,204,255,0.05));
+    border-radius: 20px;
 }
 
 .page-header h1 {
