@@ -3,21 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>celestialsteps.com | Astrology blog </title>
-    <!-- Preload CSS and force early rendering -->
-    <link rel="preload" href="style_main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style_main.css"></noscript>
-    <!-- Small inline script to handle FOUC -->
-    <script>
-      // Temporarily hide body until CSS loads (avoids flash)
-      document.addEventListener('DOMContentLoaded', function() {
-        document.body.style.opacity = '0';
-        setTimeout(function() {
-          document.body.style.opacity = '1';
-        }, 100); // Short delay to ensure CSS is ready
-      });
-    </script>
+    
+    <!-- Load fonts first -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Load CSS normally -->
+    <link rel="stylesheet" href="style_main.css">
+    
+    <title>celestialsteps.com | Astrology reports and consultations</title>
+    
+    <!-- Hide body until fonts are loaded -->
+    <style>
+        body { 
+            opacity: 0; 
+            font-family: 'Poppins', sans-serif; /* Ensure Poppins is set */
+        }
+    </style>
 </head>
+<body>
+    <!-- Your content -->
+    
+    <script>
+        // Wait for fonts to load before showing content
+        document.fonts.ready.then(function() {
+            document.body.style.opacity = '1';
+            document.body.style.transition = 'opacity 0.3s ease';
+        });
+        
+        // Fallback in case fonts don't load
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (document.body.style.opacity === '0') {
+                    document.body.style.opacity = '1';
+                }
+            }, 1000);
+        });
+    </script>
+</body>
 <body>
     <!-- Header -->
     <div id="header-placeholder"></div>
