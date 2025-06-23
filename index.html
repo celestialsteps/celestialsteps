@@ -36,18 +36,21 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <nav class="nav-container">
-            <a href="index.html" class="logo">Celestial Steps</a>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-toggle">☰</button>
-        </nav>
-    </header>
+    <div id="header-placeholder">
+        <header class="header">
+            <nav class="nav-container">
+                <a href="index.html" class="logo-skeleton">Celestialsteps.com</a>
+                <ul class="nav-skeleton">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="header-loading"></div>
+            </nav>
+        </header>
+    </div>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -110,13 +113,11 @@
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2024 Celestial Steps. All rights reserved.</p>
-            <p>Guiding you on your cosmic journey to self-discovery.</p>
-        </div>
-    </footer>
+    <!-- Footer will be loaded here -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- Load the components -->
+    <script src="includes/components.js"></script>
     
     <!-- SIMPLIFIED JavaScript -->
     <script>
@@ -135,17 +136,35 @@
         // Fallback - always show after 500ms
         setTimeout(showPage, 500);
         
-        // Mobile menu toggle
+        // Your original component loading
         document.addEventListener('DOMContentLoaded', function() {
-            const toggle = document.querySelector('.mobile-menu-toggle');
-            const menu = document.querySelector('.nav-menu');
-            
-            if (toggle && menu) {
-                toggle.addEventListener('click', function() {
-                    menu.classList.toggle('active');
-                });
+            // Initialize card animations if not already handled by components
+            if (!document.body.classList.contains('loaded-by-components')) {
+                initializeCardAnimations();
             }
         });
+
+        // Card animations (your original function)
+        function initializeCardAnimations() {
+            const cards = document.querySelectorAll('.card');
+            if (cards.length === 0) return;
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = `fadeInUp 0.8s ease ${index * 0.1}s forwards`;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        }
     </script>
 </body>
 </html>
