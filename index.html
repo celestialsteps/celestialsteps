@@ -122,5 +122,43 @@
     
        <!-- Load the components (optional) -->
     <script src="includes/components.js"></script>
+
+<!-- Anti-flash script - ADD THIS BEFORE </body> -->
+    <script>
+        // Remove preload class to enable transitions
+        function enableTransitions() {
+            document.body.classList.remove('preload');
+            document.body.classList.add('loaded');
+        }
+        
+        // Wait for fonts and DOM to be ready
+        Promise.all([
+            document.fonts.ready,
+            new Promise(resolve => {
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', resolve);
+                } else {
+                    resolve();
+                }
+            })
+        ]).then(() => {
+            // Small delay to ensure everything is painted
+            setTimeout(enableTransitions, 100);
+        }).catch(() => {
+            // Fallback if promises fail
+            enableTransitions();
+        });
+        
+        // Absolute fallback after 1 second
+        setTimeout(enableTransitions, 1000);
+        
+        // Also trigger on window load as additional safety
+        window.addEventListener('load', () => {
+            setTimeout(enableTransitions, 50);
+        });
+    </script>
+</body>
+
+
 </body>
 </html>
