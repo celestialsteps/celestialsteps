@@ -463,3 +463,303 @@ html {
             font-size: 1rem;
             line-height: 1.7;
         }
+
+
+/* ==========================================================================
+   SERVICES PAGE STYLES
+   ========================================================================== */
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin: 3rem 0 4rem;
+    padding: 2rem 1rem;
+}
+
+.page-header h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    color: #006699;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.page-header p {
+    font-family: var(--font-body);
+    font-size: 1.3rem;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+    margin: 4rem 0;
+}
+
+/* Service Card */
+.service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0,102,153,0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,102,153,0.1);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(135deg, #99ccff, #006699);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,102,153,0.2);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Service Icon */
+.service-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #99ccff, #66b3ff);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    box-shadow: 0 8px 25px rgba(153,204,255,0.3);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 12px 35px rgba(153,204,255,0.4);
+}
+
+/* Service Card Typography */
+.service-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: #006699;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.service-card .price {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    color: #ffcc00;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(255,204,0,0.3);
+}
+
+.service-card > p {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Service Features List */
+.service-features {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.service-features li {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.service-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #006699;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Service Duration */
+.service-duration {
+    font-family: var(--font-body);
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 1.2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    border-left: 4px solid #006699;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.service-duration strong {
+    color: #006699;
+    font-weight: 600;
+}
+
+/* Book Button */
+.book-button {
+    font-family: var(--font-body);
+    background: linear-gradient(135deg, #006699, #004d73);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,102,153,0.3);
+}
+
+.book-button:hover {
+    background: linear-gradient(135deg, #004d73, #003d5c);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,102,153,0.4);
+}
+
+/* Consultation CTA Section */
+.consultation-cta {
+    background: linear-gradient(135deg, #006699, #004d73);
+    color: white;
+    padding: 4rem 3rem;
+    border-radius: 20px;
+    text-align: center;
+    margin: 5rem 0 4rem;
+    box-shadow: 0 15px 40px rgba(0,102,153,0.2);
+}
+
+.consultation-cta h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.consultation-cta p {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+}
+
+.consultation-cta .cta-button {
+    background: #ffcc00;
+    color: #003d5c;
+    font-size: 1.2rem;
+    padding: 1.3rem 3rem;
+    margin-top: 1rem;
+}
+
+.consultation-cta .cta-button:hover {
+    background: #e6b800;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255,204,0,0.4);
+}
+
+/* Services Page Mobile Responsive */
+@media (max-width: 768px) {
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .page-header p {
+        font-size: 1.1rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .service-card {
+        padding: 2rem;
+    }
+    
+    .service-card h2 {
+        font-size: 1.6rem;
+    }
+    
+    .service-card .price {
+        font-size: 2rem;
+    }
+    
+    .consultation-cta {
+        padding: 3rem 2rem;
+    }
+    
+    .consultation-cta h2 {
+        font-size: 2rem;
+    }
+    
+    .consultation-cta p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-card {
+        padding: 1.5rem;
+    }
+    
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+    
+    .service-card h2 {
+        font-size: 1.4rem;
+    }
+    
+    .service-card .price {
+        font-size: 1.8rem;
+    }
+    
+    .consultation-cta {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .consultation-cta h2 {
+        font-size: 1.8rem;
+    }
+}
