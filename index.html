@@ -44,23 +44,11 @@
         height: auto;
     }
     
-    /* DEBUG: Basic styles to see if page is loading */
-    .debug-info {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        background: red;
-        color: white;
-        padding: 10px;
-        z-index: 9999;
-    }
+
     </style>
 </head>
 <body class="preload">
-    <!-- DEBUG INFO -->
-    <div class="debug-info">
-        Page loaded! Check console for errors.
-    </div>
+
 
     <!-- Header -->
     <div id="header-placeholder">
@@ -84,7 +72,7 @@
         <div class="container">
             <!-- Hero Section -->
             <section class="hero" id="home">
-                <img src="images/cover_image_small.png" alt="Celestial Steps" class="hero-image" onerror="console.log('Image failed to load')">
+                <img src="images/cover_image_small.png" alt="Celestial Steps" class="hero-image">
 
                 <div class="hero-content">
                     <h1>Celestial Steps</h1>
@@ -144,51 +132,29 @@
     <!-- Footer will be loaded here -->
     <div id="footer-placeholder"></div>
     
-    <!-- Load the components with error handling -->
+    <!-- Load the components -->
+    <script src="includes/components.js"></script>
+    
     <script>
-        console.log('Starting to load page...');
-        
-        // Try to load components.js with error handling
-        const script = document.createElement('script');
-        script.src = 'includes/components.js';
-        script.onload = function() {
-            console.log('components.js loaded successfully');
-        };
-        script.onerror = function() {
-            console.error('Failed to load components.js - check if file exists at includes/components.js');
-        };
-        document.head.appendChild(script);
-        
-        // Main script
-        console.log('DOM loading...');
-        
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM loaded!');
-            
             // Remove preload class and show content
             document.body.classList.remove('preload');
             document.body.classList.add('loaded');
-            console.log('Page should now be visible');
             
-            // Only run if inline loading hasn't already handled everything
+            // Initialize card animations if not already handled by components
             if (!document.body.classList.contains('loaded-by-components')) {
-                console.log('Initializing card animations...');
                 initializeCardAnimations();
             }
         });
 
-        // Card animations - enhanced version
+        // Card animations
         function initializeCardAnimations() {
             const cards = document.querySelectorAll('.card');
-            console.log('Found', cards.length, 'cards');
-            
             if (cards.length === 0) return;
             
-            // Use Intersection Observer for better performance
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry, index) => {
                     if (entry.isIntersecting) {
-                        console.log('Animating card', index);
                         entry.target.style.animation = `fadeInUp 0.8s ease ${index * 0.1}s forwards`;
                         observer.unobserve(entry.target);
                     }
@@ -202,30 +168,6 @@
                 observer.observe(card);
             });
         }
-
-        // Check if CSS loaded
-        window.addEventListener('load', function() {
-            console.log('All resources loaded');
-            
-            // Check if CSS is working
-            const testElement = document.querySelector('body');
-            const styles = window.getComputedStyle(testElement);
-            console.log('Body font-family:', styles.fontFamily);
-            console.log('Body background-color:', styles.backgroundColor);
-            
-            if (styles.fontFamily.includes('Poppins')) {
-                console.log('✅ CSS and fonts loaded correctly');
-            } else {
-                console.warn('⚠️ CSS might not be loading - check style_main.css file');
-            }
-        });
-        
-        // Log any errors
-        window.addEventListener('error', function(e) {
-            console.error('Error:', e.error);
-            console.error('File:', e.filename);
-            console.error('Line:', e.lineno);
-        });
     </script>
 </body>
 </html>
