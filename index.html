@@ -1,76 +1,25 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="style_main.css" as="style">
-    <link rel="preload" href="includes/components.js" as="script">
     
     <!-- Load fonts first -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Load CSS normally -->
+      <!-- Load the components -->
+    <script src="includes/components.js"></script>
+    <!-- Load CSS -->
     <link rel="stylesheet" href="style_main.css">
     
     <title>celestialsteps.com | Astrology reports and consultations</title>
     
-    <!-- Hide body until fonts are loaded -->
-    <style>
-    body { 
-        opacity: 0;
-        font-family: 'Poppins', sans-serif;
-        background-color: #f8f9fa; /* Match your body background */
-    }
-    #header-placeholder {
-        min-height: 60px; /* Approximate header height */
-        background: linear-gradient(135deg, #006699 0%, #004d73 100%);
-    }
-
-            #header-placeholder {
-        min-height: 60px; /* Approximate header height */
-        background: linear-gradient(135deg, #006699 0%, #004d73 100%);
-    }
-           <script>
-        // Wait for fonts to load before showing content
-        document.fonts.ready.then(function() {
-            document.body.style.opacity = '1';
-            document.body.style.transition = 'opacity 0.5s ease';
-        }).catch(() => {
-            // If fonts fail to load, still show content
-            document.body.style.opacity = '1';
-            document.body.style.transition = 'opacity 0.5s ease';
-        });
-
-        // Fallback in case fonts don't load within 1 second
-        setTimeout(function() {
-            if (document.body.style.opacity === '0') {
-                document.body.style.opacity = '1';
-                document.body.style.transition = 'opacity 0.5s ease';
-            }
-        }, 1000);
-
-        
-</style>
-</head>
+   </head>
 <body>
     <!-- Header -->
      <div id="header-placeholder"></div>
-
-<header class="header">
-    <nav class="nav-container">
-        <a href="index.html" class="logo">Celestialsteps.com</a>
-        <ul class="nav-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-    </nav>
-</header>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -135,7 +84,7 @@
 
     <!-- Footer will be loaded here -->
     <div id="footer-placeholder"></div>
+    
 
 </body>
 </html>
-
