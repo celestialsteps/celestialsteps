@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="style_main.css" as="style">
-    <link rel="preload" href="includes/components.js" as="script">
-    
     <!-- Load fonts first -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Load CSS -->
+    <!-- Load CSS - CHECK IF THIS FILE EXISTS -->
     <link rel="stylesheet" href="style_main.css">
     
     <title>celestialsteps.com | Astrology reports and consultations</title>
@@ -47,31 +43,48 @@
         max-width: 100%;
         height: auto;
     }
-</style>
+    
+    /* DEBUG: Basic styles to see if page is loading */
+    .debug-info {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: red;
+        color: white;
+        padding: 10px;
+        z-index: 9999;
+    }
+    </style>
 </head>
 <body class="preload">
-      <!-- NEW - Single header with skeleton -->
-<div id="header-placeholder">
-    <header class="header">
-        <nav class="nav-container">
-            <a href="index.html" class="logo-skeleton">Celestialsteps.com</a>
-            <ul class="nav-skeleton">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-            <div class="header-loading"></div>
-        </nav>
-    </header>
-</div>
+    <!-- DEBUG INFO -->
+    <div class="debug-info">
+        Page loaded! Check console for errors.
+    </div>
+
+    <!-- Header -->
+    <div id="header-placeholder">
+        <header class="header">
+            <nav class="nav-container">
+                <a href="index.html" class="logo-skeleton">Celestialsteps.com</a>
+                <ul class="nav-skeleton">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="header-loading"></div>
+            </nav>
+        </header>
+    </div>
+
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
             <!-- Hero Section -->
             <section class="hero" id="home">
-                <img src="images/cover_image_small.png" alt="Celestial Steps" class="hero-image">
+                <img src="images/cover_image_small.png" alt="Celestial Steps" class="hero-image" onerror="console.log('Image failed to load')">
 
                 <div class="hero-content">
                     <h1>Celestial Steps</h1>
@@ -131,75 +144,88 @@
     <!-- Footer will be loaded here -->
     <div id="footer-placeholder"></div>
     
-       <!-- Load the components (optional) -->
-    <script src="includes/components.js"></script>
-<script>
-// Anti-flash script - ADD THIS BEFORE </body>
-   // components.js - Updated to work with coordinated loading
-
-// This file is now optional since loading is handled inline
-// But keeping it for backward compatibility
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Only run if inline loading hasn't already handled everything
-    if (!document.body.classList.contains('loaded')) {
-        // Initialize any remaining functionality
-        initializeCardAnimations();
-    }
-});
-
-// Card animations - enhanced version
-function initializeCardAnimations() {
-    const cards = document.querySelectorAll('.card');
-    if (cards.length === 0) return;
-    
-    // Use Intersection Observer for better performance
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                entry.target.style.animation = `fadeInUp 0.8s ease ${index * 0.1}s forwards`;
-                observer.unobserve(entry.target);
+    <!-- Load the components with error handling -->
+    <script>
+        console.log('Starting to load page...');
+        
+        // Try to load components.js with error handling
+        const script = document.createElement('script');
+        script.src = 'includes/components.js';
+        script.onload = function() {
+            console.log('components.js loaded successfully');
+        };
+        script.onerror = function() {
+            console.error('Failed to load components.js - check if file exists at includes/components.js');
+        };
+        document.head.appendChild(script);
+        
+        // Main script
+        console.log('DOM loading...');
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded!');
+            
+            // Remove preload class and show content
+            document.body.classList.remove('preload');
+            document.body.classList.add('loaded');
+            console.log('Page should now be visible');
+            
+            // Only run if inline loading hasn't already handled everything
+            if (!document.body.classList.contains('loaded-by-components')) {
+                console.log('Initializing card animations...');
+                initializeCardAnimations();
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '50px'
-    });
-    
-    cards.forEach(card => {
-        observer.observe(card);
-    });
-}
 
-// Smooth page transitions (optional enhancement)
-function initializePageTransitions() {
-    const links = document.querySelectorAll('a[href^="./"], a[href^="/"], a[href$=".html"]');
-    
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
+        // Card animations - enhanced version
+        function initializeCardAnimations() {
+            const cards = document.querySelectorAll('.card');
+            console.log('Found', cards.length, 'cards');
             
-            // Skip if it's an anchor link or external link
-            if (href.startsWith('#') || href.startsWith('http') || href.includes('mailto')) {
-                return;
+            if (cards.length === 0) return;
+            
+            // Use Intersection Observer for better performance
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        console.log('Animating card', index);
+                        entry.target.style.animation = `fadeInUp 0.8s ease ${index * 0.1}s forwards`;
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // Check if CSS loaded
+        window.addEventListener('load', function() {
+            console.log('All resources loaded');
+            
+            // Check if CSS is working
+            const testElement = document.querySelector('body');
+            const styles = window.getComputedStyle(testElement);
+            console.log('Body font-family:', styles.fontFamily);
+            console.log('Body background-color:', styles.backgroundColor);
+            
+            if (styles.fontFamily.includes('Poppins')) {
+                console.log('✅ CSS and fonts loaded correctly');
+            } else {
+                console.warn('⚠️ CSS might not be loading - check style_main.css file');
             }
-            
-            e.preventDefault();
-            
-            // Add fade out effect
-            document.body.style.opacity = '0.7';
-            document.body.style.transition = 'opacity 0.2s ease-out';
-            
-            // Navigate after short delay
-            setTimeout(() => {
-                window.location.href = href;
-            }, 150);
         });
-    });
-}
-
-// Call page transitions if desired
-// initializePageTransitions();
-</script>
+        
+        // Log any errors
+        window.addEventListener('error', function(e) {
+            console.error('Error:', e.error);
+            console.error('File:', e.filename);
+            console.error('Line:', e.lineno);
+        });
+    </script>
 </body>
 </html>
