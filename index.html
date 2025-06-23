@@ -84,54 +84,6 @@
     <!-- Footer will be loaded here -->
     <div id="footer-placeholder"></div>
     
-  
-    
-    <!-- SIMPLIFIED JavaScript -->
-    <script>
-        // Show page once everything is ready
-        function showPage() {
-            document.documentElement.classList.add('loaded');
-        }
-        
-        // Show page when DOM is ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', showPage);
-        } else {
-            showPage();
-        }
-        
-        // Fallback - always show after 500ms
-        setTimeout(showPage, 500);
-        
-        // Your original component loading
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize card animations if not already handled by components
-            if (!document.body.classList.contains('loaded-by-components')) {
-                initializeCardAnimations();
-            }
-        });
 
-        // Card animations (your original function)
-        function initializeCardAnimations() {
-            const cards = document.querySelectorAll('.card');
-            if (cards.length === 0) return;
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = `fadeInUp 0.8s ease ${index * 0.1}s forwards`;
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '50px'
-            });
-            
-            cards.forEach(card => {
-                observer.observe(card);
-            });
-        }
-    </script>
 </body>
 </html>
