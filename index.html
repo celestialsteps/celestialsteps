@@ -9,65 +9,45 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Load CSS - CHECK IF THIS FILE EXISTS -->
+    <!-- Load CSS -->
     <link rel="stylesheet" href="style_main.css">
-    
-    <script>document.documentElement.style.visibility='hidden';document.addEventListener('DOMContentLoaded',()=>document.documentElement.style.visibility='visible')</script>
     
     <title>celestialsteps.com | Astrology reports and consultations</title>
     
-    <!-- Anti-flash styles -->
+    <!-- SIMPLIFIED Anti-flash styles -->
     <style>
-    /* Prevent flash by hiding content initially */
-    .preload * {
-        transition: none !important;
-        animation: none !important;
-    }
-    
-    body { 
-        opacity: 0;
-        font-family: 'Poppins', sans-serif;
-        background-color: #f8f9fa;
-        transition: opacity 0.4s ease-in-out;
-    }
-    
-    body.loaded {
-        opacity: 1;
-    }
-    
-    #header-placeholder {
-        min-height: 60px;
-        background: linear-gradient(135deg, #006699 0%, #004d73 100%);
-    }
-    
-    /* Prevent layout shift for hero image */
-    .hero-image {
-        max-width: 100%;
-        height: auto;
-    }
-    
-
+        /* Hide content until everything loads */
+        html {
+            visibility: hidden;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8f1f8 100%);
+        }
+        
+        html.loaded {
+            visibility: visible;
+        }
+        
+        /* Prevent layout shift for hero image */
+        .hero-image {
+            max-width: 400px;
+            height: 400px;
+            object-fit: cover;
+        }
     </style>
 </head>
-<body class="preload">
-
-
+<body>
     <!-- Header -->
-    <div id="header-placeholder">
-        <header class="header">
-            <nav class="nav-container">
-                <a href="index.html" class="logo-skeleton">Celestialsteps.com</a>
-                <ul class="nav-skeleton">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-                <div class="header-loading"></div>
-            </nav>
-        </header>
-    </div>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo">Celestial Steps</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-toggle">☰</button>
+        </nav>
+    </header>
 
     <!-- Main Content -->
     <main class="main-content">
@@ -75,14 +55,13 @@
             <!-- Hero Section -->
             <section class="hero" id="home">
                 <img src="images/cover_image_small.png" alt="Celestial Steps" class="hero-image">
-
                 <div class="hero-content">
                     <h1>Celestial Steps</h1>
                     <h2>The companion to your astrological journey</h2>
                     <h3>"Learn, discover, grow"</h3>
                     <h4>Astrology interpretations, consultations, lessons & content</h4>
                     <h5>Discover your cosmic blueprint with professional astrology readings that illuminate your path, relationships, and life purpose. Get personalized insights from the universe's ancient language.</h5>
-                    <a href="#services" class="cta-button">Explore Our Services</a>
+                    <a href="services.html" class="cta-button">Explore Our Services</a>
                 </div>
             </section>
 
@@ -131,45 +110,42 @@
         </div>
     </main>
 
-    <!-- Footer will be loaded here -->
-    <div id="footer-placeholder"></div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Celestial Steps. All rights reserved.</p>
+            <p>Guiding you on your cosmic journey to self-discovery.</p>
+        </div>
+    </footer>
     
-    <!-- Load the components -->
-    <script src="includes/components.js"></script>
-    
+    <!-- SIMPLIFIED JavaScript -->
     <script>
+        // Show page once everything is ready
+        function showPage() {
+            document.documentElement.classList.add('loaded');
+        }
+        
+        // Show page when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', showPage);
+        } else {
+            showPage();
+        }
+        
+        // Fallback - always show after 500ms
+        setTimeout(showPage, 500);
+        
+        // Mobile menu toggle
         document.addEventListener('DOMContentLoaded', function() {
-            // Remove preload class and show content
-            document.body.classList.remove('preload');
-            document.body.classList.add('loaded');
+            const toggle = document.querySelector('.mobile-menu-toggle');
+            const menu = document.querySelector('.nav-menu');
             
-            // Initialize card animations if not already handled by components
-            if (!document.body.classList.contains('loaded-by-components')) {
-                initializeCardAnimations();
+            if (toggle && menu) {
+                toggle.addEventListener('click', function() {
+                    menu.classList.toggle('active');
+                });
             }
         });
-
-        // Card animations
-        function initializeCardAnimations() {
-            const cards = document.querySelectorAll('.card');
-            if (cards.length === 0) return;
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry, index) => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animation = `fadeInUp 0.8s ease ${index * 0.1}s forwards`;
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.1,
-                rootMargin: '50px'
-            });
-            
-            cards.forEach(card => {
-                observer.observe(card);
-            });
-        }
     </script>
 </body>
 </html>
