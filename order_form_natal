@@ -412,21 +412,17 @@
         });
 
        
-    </script>
-<!-- includes/footer.html --> 
-<footer class="footer"> 
-  <p>&copy; 2025 celestialsteps.com. All rights reserved.</p> <p> <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact</a> 
-  </p> 
-</footer>
-
-<script>
+ <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const navMenu = document.getElementById('navMenu');
+    // Use the correct IDs that match your HTML
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
     
     if (mobileMenuToggle && navMenu) {
         mobileMenuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
+            // Optional: animate the hamburger button
+            mobileMenuToggle.classList.toggle('active');
         });
         
         // Close menu when clicking on menu items
@@ -434,6 +430,7 @@ document.addEventListener('DOMContentLoaded', function() {
         menuLinks.forEach(link => {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
             });
         });
         
@@ -442,6 +439,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!mobileMenuToggle.contains(event.target) && 
                 !navMenu.contains(event.target)) {
                 navMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
             }
         });
     }
