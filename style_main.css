@@ -258,7 +258,7 @@ body { font-family: 'Poppins', sans-serif; }
         .cta-button {
             font-family: var(--font-body);
             background: #ffcc00;
-            color: #003d5c;
+            color: #ffcc0061;
             padding: 1.2rem 2.5rem;
             border: 2px solid #ffcc00;
             border-radius: 50px;
