@@ -189,5 +189,34 @@
   <p>&copy; 2025 celestialsteps.com. All rights reserved.</p> <p> <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact</a> 
   </p> 
 </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const navMenu = document.getElementById('navMenu');
+    
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on menu items
+        const menuLinks = navMenu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenuToggle.contains(event.target) && 
+                !navMenu.contains(event.target)) {
+                navMenu.classList.remove('active');
+            }
+        });
+    }
+});
+</script>
 </body>
 </html>
