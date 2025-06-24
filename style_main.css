@@ -49,7 +49,7 @@ body { font-family: 'Poppins', sans-serif; }
 
         .logo {
             font-family: var(--font-heading);
-            font-size: 1.6rem;
+            font-size: 2rem;
             font-weight: normal;
             text-decoration: none;
             color: white;
