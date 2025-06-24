@@ -481,7 +481,7 @@ body { font-family: 'Poppins', sans-serif; }
 .page-header p {
     font-family: var(--font-body);
     font-size: 1.3rem;
-    color: #006699;
+    color: #555;
     max-width: 600px;
     margin: 0 auto;
     line-height: 1.6;
