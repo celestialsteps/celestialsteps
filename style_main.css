@@ -216,7 +216,8 @@ body { font-family: 'Poppins', sans-serif; }
             font-size: 3.5rem;
             margin-bottom: 0.5rem;
             font-weight: normal;   
-            color: #006699;       
+            color: #006699;    
+            text-align: center;
         }
 
         .hero-content h2 {
