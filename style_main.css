@@ -257,9 +257,9 @@ body { font-family: 'Poppins', sans-serif; }
 
         /* CTA Button */
         .cta-button {
-            font-family: var(--font-body);
-            background: #ffcc00;
-            color: #ffcc0061;
+            font-family: var(--font-body);  
+            background: #ffcc0061;
+            color: #014a6f;
             padding: 1.2rem 2.5rem;
             border: 2px solid #ffcc00;
             border-radius: 50px;
