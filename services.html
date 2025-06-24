@@ -24,14 +24,16 @@
     <header class="header">
     <nav class="nav-container">
         <a href="index.html" class="logo">Celestialsteps.com</a>
-        <ul class="nav-menu">
+        <!-- ADD id="mobile-menu-toggle" and REMOVE onclick -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button> 
+        <!-- ADD id="nav-menu" -->
+        <ul class="nav-menu" id="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
     </nav>
 </header>
 
