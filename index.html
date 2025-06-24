@@ -18,21 +18,21 @@
    </head>
 <body>
     <!-- Header -->
-     <header class="header">
+    <header class="header">
     <nav class="nav-container">
         <a href="index.html" class="logo">Celestialsteps.com</a>
-        <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">☰</button>
-        <ul class="nav-menu">
+        <!-- ADD id="mobile-menu-toggle" and REMOVE onclick -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button> 
+        <!-- ADD id="nav-menu" -->
+        <ul class="nav-menu" id="nav-menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        
     </nav>
 </header>
-
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
@@ -100,14 +100,17 @@
       </p> 
     </footer>
 
-   <script>
+ <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const navMenu = document.getElementById('navMenu');
+    // Use the correct IDs that match your HTML
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
     
     if (mobileMenuToggle && navMenu) {
         mobileMenuToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
+            // Optional: animate the hamburger button
+            mobileMenuToggle.classList.toggle('active');
         });
         
         // Close menu when clicking on menu items
@@ -115,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
         menuLinks.forEach(link => {
             link.addEventListener('click', function() {
                 navMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
             });
         });
         
@@ -123,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!mobileMenuToggle.contains(event.target) && 
                 !navMenu.contains(event.target)) {
                 navMenu.classList.remove('active');
+                mobileMenuToggle.classList.remove('active');
             }
         });
     }
