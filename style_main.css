@@ -1,16 +1,27 @@
            ==========================================================================
            GLOBAL STYLES - Used across all pages
            ========================================================================== */
-          :root {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+}          
+
+
+
+:root {
   --font-heading: 'Poppins', sans-serif;    
   --font-body: 'Poppins', sans-serif;     
 }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+
+/* FORCE POPPINS TEMPORARILY */
+body, body * {
+  font-family: 'Poppins', sans-serif !important;
+  color: #333 !important; /* Default text color */
+}
 
 body {
     font-family: 'Poppins', sans-serif !important;
