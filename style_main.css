@@ -2,8 +2,8 @@
            GLOBAL STYLES - Used across all pages
            ========================================================================== */
           :root {
-  --font-heading: 'Poppins', sans-serif;    /* Updated to Poppins */
-  --font-body: 'Poppins', sans-serif;      /* Or keep 'Inter' for body if preferred */
+  --font-heading: 'Poppins', sans-serif;    
+  --font-body: 'Poppins', sans-serif;     
 }
 
         * {
@@ -12,22 +12,13 @@
             box-sizing: border-box;
         }
 
+body {
+    font-family: var(--font-body);
+    /* other styles */
+}
 
-        body {
-            font-family: var(--font-body);
-            line-height: 1.7;
-            color: #333;
-            background-color: #f0f4f8;
-        }
-
-        /* Headings use Cormorant Garamond */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-        }
-
-/* Prevent flash of unstyled content */
-html {
-    background-color: #f8f9fa;
+     h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
 }
 
 
