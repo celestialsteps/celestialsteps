@@ -24,26 +24,24 @@
     </style>
 </head>
 <body>
-    <!-- Your content -->
-    
-    <script>
-        // Wait for fonts to load before showing content
-        document.fonts.ready.then(function() {
-            document.body.style.opacity = '1';
-            document.body.style.transition = 'opacity 0.3s ease';
-        });
-        
-        // Fallback in case fonts don't load
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                if (document.body.style.opacity === '0') {
-                    document.body.style.opacity = '1';
-                }
-            }, 1000);
-        });
-    </script>
-</body>
-<body>
+   <body>
+
+        <!-- Header -->
+    <header class="header">
+    <nav class="nav-container">
+        <a href="index.html" class="logo">Celestialsteps.com</a>
+        <!-- ADD id="mobile-menu-toggle" and REMOVE onclick -->
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button> 
+        <!-- ADD id="nav-menu" -->
+        <ul class="nav-menu" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
   <main class="container">
     <h2>Thank you for your submission!</h2>
     <p>We’ve received your birth data and will reach out to you shortly.</p>
