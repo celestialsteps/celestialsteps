@@ -16,17 +16,7 @@
   --font-body: 'Poppins', sans-serif;     
 }
 
-
-/* FORCE POPPINS TEMPORARILY */
-body, body * {
-  font-family: 'Poppins', sans-serif !important;
-  color: #333 !important; /* Default text color */
-}
-
-body {
-    font-family: 'Poppins', sans-serif !important;
-    color: red !important; /* Temporary - to verify CSS is applying */
-}
+body { font-family: 'Poppins', sans-serif; }
 
      h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
