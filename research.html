@@ -10,8 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
  
-    <!-- Load CSS normally -->
+    <!-- Load CSS -->
     <link rel="stylesheet" href="style_main.css">
+    <link rel="stylesheet" href="research.css">
     
     <title>Research | CelestialSteps - Advancing Astrological Understanding</title>
 </head>
@@ -26,7 +27,7 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="services.html">Services</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="research.html">Research</a></li>
+                <li><a href="research.html" class="active">Research</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -35,40 +36,34 @@
     <!-- Main Content -->
     <main class="main-content">
         <div class="container">
-            <!-- Hero Section -->
-            <section class="research-hero">
-                <div class="hero-content">
-                    <h1>Astrological Research</h1>
-                    <p class="hero-subtitle">Bridging ancient wisdom with modern analysis to deepen our understanding of cosmic influences</p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">500+</div>
-                            <div class="stat-label">Charts Analyzed</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">3</div>
-                            <div class="stat-label">Active Studies</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">2</div>
-                            <div class="stat-label">Years Research</div>
-                        </div>
+            <!-- Page Header -->
+            <section class="page-header">
+                <h1>Astrological Research</h1>
+                <p>Bridging ancient wisdom with modern analysis to deepen our understanding of cosmic influences</p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Charts Analyzed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Active Studies</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Years Research</div>
                     </div>
                 </div>
             </section>
 
             <!-- Current Research Projects -->
-            <section class="research-projects">
+            <section class="content-section">
                 <h2>Current Research Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card active">
-                        <div class="project-header">
-                            <div class="project-icon">🌙</div>
-                            <div class="project-meta">
-                                <h3>Lunar Phase Correlation Study</h3>
-                                <span class="project-status">Active • Recruiting Participants</span>
-                            </div>
-                        </div>
+                <div class="card-grid">
+                    <div class="card research-card active">
+                        <div class="card-icon">🌙</div>
+                        <h3>Lunar Phase Correlation Study</h3>
+                        <div class="project-status active">Active • Recruiting Participants</div>
                         <p>Investigating the correlation between lunar phases at birth and personality traits, focusing on emotional patterns and intuitive abilities.</p>
                         <div class="project-progress">
                             <div class="progress-bar">
@@ -76,17 +71,13 @@
                             </div>
                             <span class="progress-text">65% Complete • 200 participants needed</span>
                         </div>
-                        <a href="#participate" class="project-btn">Join This Study</a>
+                        <a href="#participate" class="cta-button project-btn">Join This Study</a>
                     </div>
 
-                    <div class="project-card active">
-                        <div class="project-header">
-                            <div class="project-icon">⚡</div>
-                            <div class="project-meta">
-                                <h3>Career Success & Midheaven Analysis</h3>
-                                <span class="project-status">Active • Data Collection</span>
-                            </div>
-                        </div>
+                    <div class="card research-card active">
+                        <div class="card-icon">⚡</div>
+                        <h3>Career Success & Midheaven Analysis</h3>
+                        <div class="project-status active">Active • Data Collection</div>
                         <p>Examining the relationship between Midheaven placements and career satisfaction across different professions and industries.</p>
                         <div class="project-progress">
                             <div class="progress-bar">
@@ -94,17 +85,13 @@
                             </div>
                             <span class="progress-text">40% Complete • Professional data needed</span>
                         </div>
-                        <a href="#participate" class="project-btn">Contribute Data</a>
+                        <a href="#participate" class="cta-button project-btn">Contribute Data</a>
                     </div>
 
-                    <div class="project-card">
-                        <div class="project-header">
-                            <div class="project-icon">💫</div>
-                            <div class="project-meta">
-                                <h3>Retrograde Planets & Life Events</h3>
-                                <span class="project-status">Planning • Starting Soon</span>
-                            </div>
-                        </div>
+                    <div class="card research-card">
+                        <div class="card-icon">💫</div>
+                        <h3>Retrograde Planets & Life Events</h3>
+                        <div class="project-status">Planning • Starting Soon</div>
                         <p>A longitudinal study tracking major life events during personal retrograde transits to understand their practical manifestations.</p>
                         <div class="project-progress">
                             <div class="progress-bar">
@@ -112,16 +99,16 @@
                             </div>
                             <span class="progress-text">15% Complete • Study design phase</span>
                         </div>
-                        <a href="#newsletter" class="project-btn secondary">Get Notified</a>
+                        <a href="#newsletter" class="cta-button secondary">Get Notified</a>
                     </div>
                 </div>
             </section>
 
             <!-- Research Findings -->
-            <section class="research-findings">
+            <section class="content-section">
                 <h2>Key Findings & Insights</h2>
-                <div class="findings-grid">
-                    <div class="finding-card">
+                <div class="card-grid">
+                    <div class="card finding-card">
                         <div class="finding-header">
                             <h3>Birth Time Accuracy Impact</h3>
                             <span class="finding-date">Published March 2024</span>
@@ -140,26 +127,21 @@
                         <a href="#" class="finding-link">Read Full Study →</a>
                     </div>
 
-                    <div class="finding-card">
+                    <div class="card finding-card">
                         <div class="finding-header">
                             <h3>Seasonal Birth Patterns</h3>
                             <span class="finding-date">Published January 2024</span>
                         </div>
                         <div class="finding-visual">
                             <div class="chart-placeholder">
-                                <div class="pie-chart">
-                                    <div class="pie-slice slice-1"></div>
-                                    <div class="pie-slice slice-2"></div>
-                                    <div class="pie-slice slice-3"></div>
-                                    <div class="pie-slice slice-4"></div>
-                                </div>
+                                <div class="pie-chart"></div>
                             </div>
                         </div>
                         <p>Seasonal birth data from 500+ clients shows interesting correlations between birth seasons and dominant elemental expressions in personality traits.</p>
                         <a href="#" class="finding-link">View Analysis →</a>
                     </div>
 
-                    <div class="finding-card">
+                    <div class="card finding-card">
                         <div class="finding-header">
                             <h3>Transit Timing Accuracy</h3>
                             <span class="finding-date">Published October 2023</span>
@@ -168,10 +150,10 @@
                             <div class="chart-placeholder">
                                 <div class="line-chart">
                                     <svg viewBox="0 0 100 60" class="chart-svg">
-                                        <polyline points="10,45 25,30 40,35 55,20 70,25 85,15" stroke="#FFD700" stroke-width="2" fill="none"/>
-                                        <circle cx="25" cy="30" r="2" fill="#FFD700"/>
-                                        <circle cx="55" cy="20" r="2" fill="#FFD700"/>
-                                        <circle cx="85" cy="15" r="2" fill="#FFD700"/>
+                                        <polyline points="10,45 25,30 40,35 55,20 70,25 85,15" stroke="#006699" stroke-width="2" fill="none"/>
+                                        <circle cx="25" cy="30" r="2" fill="#006699"/>
+                                        <circle cx="55" cy="20" r="2" fill="#006699"/>
+                                        <circle cx="85" cy="15" r="2" fill="#006699"/>
                                     </svg>
                                 </div>
                             </div>
@@ -183,53 +165,51 @@
             </section>
 
             <!-- Participate Section -->
-            <section class="participate-section" id="participate">
-                <div class="participate-content">
-                    <h2>Join Our Research Community</h2>
-                    <p class="participate-intro">Help advance astrological understanding by contributing to our studies. Your participation helps validate ancient wisdom through modern analysis.</p>
-                    
-                    <div class="participation-options">
-                        <div class="participation-card">
-                            <div class="card-icon">📊</div>
-                            <h3>Share Your Data</h3>
-                            <p>Contribute your birth information and life experiences to our statistical analyses. All data is anonymized and used solely for research purposes.</p>
-                            <ul class="requirements-list">
-                                <li>Accurate birth time (within 15 minutes preferred)</li>
-                                <li>Major life event dates</li>
-                                <li>Career and relationship milestones</li>
-                            </ul>
-                            <a href="#" class="participation-btn" id="data-form-btn">Submit Data</a>
-                        </div>
+            <section class="consultation-cta" id="participate">
+                <h2>Join Our Research Community</h2>
+                <p>Help advance astrological understanding by contributing to our studies. Your participation helps validate ancient wisdom through modern analysis.</p>
+                
+                <div class="card-grid participation-grid">
+                    <div class="card participation-card">
+                        <div class="card-icon">📊</div>
+                        <h3>Share Your Data</h3>
+                        <p>Contribute your birth information and life experiences to our statistical analyses. All data is anonymized and used solely for research purposes.</p>
+                        <ul class="requirements-list">
+                            <li>Accurate birth time (within 15 minutes preferred)</li>
+                            <li>Major life event dates</li>
+                            <li>Career and relationship milestones</li>
+                        </ul>
+                        <a href="#" class="cta-button">Submit Data</a>
+                    </div>
 
-                        <div class="participation-card">
-                            <div class="card-icon">🔬</div>
-                            <h3>Long-term Study Participant</h3>
-                            <p>Join ongoing longitudinal research tracking astrological correlations over time. Participants receive detailed reports on their contributions.</p>
-                            <ul class="requirements-list">
-                                <li>Commitment to 6-month minimum participation</li>
-                                <li>Monthly check-ins and updates</li>
-                                <li>Detailed birth chart required</li>
-                            </ul>
-                            <a href="#" class="participation-btn" id="longterm-btn">Apply to Participate</a>
-                        </div>
+                    <div class="card participation-card">
+                        <div class="card-icon">🔬</div>
+                        <h3>Long-term Study Participant</h3>
+                        <p>Join ongoing longitudinal research tracking astrological correlations over time. Participants receive detailed reports on their contributions.</p>
+                        <ul class="requirements-list">
+                            <li>Commitment to 6-month minimum participation</li>
+                            <li>Monthly check-ins and updates</li>
+                            <li>Detailed birth chart required</li>
+                        </ul>
+                        <a href="#" class="cta-button">Apply to Participate</a>
+                    </div>
 
-                        <div class="participation-card">
-                            <div class="card-icon">💬</div>
-                            <h3>Interview Participant</h3>
-                            <p>Share your astrological experiences through in-depth interviews. Perfect for those with unique planetary configurations or life patterns.</p>
-                            <ul class="requirements-list">
-                                <li>Interesting astrological story or pattern</li>
-                                <li>Willing to share detailed experiences</li>
-                                <li>45-60 minute interview commitment</li>
-                            </ul>
-                            <a href="#" class="participation-btn" id="interview-btn">Schedule Interview</a>
-                        </div>
+                    <div class="card participation-card">
+                        <div class="card-icon">💬</div>
+                        <h3>Interview Participant</h3>
+                        <p>Share your astrological experiences through in-depth interviews. Perfect for those with unique planetary configurations or life patterns.</p>
+                        <ul class="requirements-list">
+                            <li>Interesting astrological story or pattern</li>
+                            <li>Willing to share detailed experiences</li>
+                            <li>45-60 minute interview commitment</li>
+                        </ul>
+                        <a href="#" class="cta-button">Schedule Interview</a>
                     </div>
                 </div>
             </section>
 
             <!-- Newsletter Section -->
-            <section class="newsletter-section" id="newsletter">
+            <section class="content-section" id="newsletter">
                 <div class="newsletter-card">
                     <div class="newsletter-content">
                         <h3>Research Updates & Findings</h3>
@@ -243,27 +223,27 @@
             </section>
 
             <!-- Ethics & Transparency -->
-            <section class="ethics-section">
+            <section class="content-section">
                 <h2>Research Ethics & Transparency</h2>
-                <div class="ethics-grid">
-                    <div class="ethics-item">
-                        <div class="ethics-icon">🔒</div>
-                        <h4>Data Privacy</h4>
+                <div class="card-grid">
+                    <div class="card ethics-card">
+                        <div class="card-icon">🔒</div>
+                        <h3>Data Privacy</h3>
                         <p>All personal information is anonymized and encrypted. Birth data is used solely for statistical analysis.</p>
                     </div>
-                    <div class="ethics-item">
-                        <div class="ethics-icon">📋</div>
-                        <h4>Informed Consent</h4>
+                    <div class="card ethics-card">
+                        <div class="card-icon">📋</div>
+                        <h3>Informed Consent</h3>
                         <p>Participants receive clear information about study purposes, methods, and how their data will be used.</p>
                     </div>
-                    <div class="ethics-item">
-                        <div class="ethics-icon">📊</div>
-                        <h4>Open Results</h4>
+                    <div class="card ethics-card">
+                        <div class="card-icon">📊</div>
+                        <h3>Open Results</h3>
                         <p>Research findings are shared transparently with the astrological community and study participants.</p>
                     </div>
-                    <div class="ethics-item">
-                        <div class="ethics-icon">🤝</div>
-                        <h4>Voluntary Participation</h4>
+                    <div class="card ethics-card">
+                        <div class="card-icon">🤝</div>
+                        <h3>Voluntary Participation</h3>
                         <p>Participation is entirely voluntary with the right to withdraw at any time without consequences.</p>
                     </div>
                 </div>
@@ -274,569 +254,5 @@
     <!-- Footer -->
     <div id="footer-placeholder"></div>
     <script src="includes/components.js"></script>
-
-    <style>
-        /* Research Page Specific Styles */
-        
-        /* Hero Section */
-        .research-hero {
-            text-align: center;
-            padding: 3rem 0 4rem 0;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 165, 0, 0.05));
-            border-radius: 20px;
-            margin-bottom: 4rem;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 600px;
-            margin: 0 auto 3rem auto;
-            line-height: 1.6;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #FFD700;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Research Projects */
-        .research-projects {
-            margin-bottom: 5rem;
-        }
-
-        .research-projects h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            color: #FFD700;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .project-card.active {
-            border-color: rgba(255, 215, 0, 0.3);
-            box-shadow: 0 8px 30px rgba(255, 215, 0, 0.1);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 40px rgba(255, 215, 0, 0.15);
-        }
-
-        .project-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-icon {
-            font-size: 2rem;
-            flex-shrink: 0;
-        }
-
-        .project-meta h3 {
-            color: #FFD700;
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-
-        .project-status {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.6);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .project-card.active .project-status {
-            color: #90EE90;
-        }
-
-        .project-card p {
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .project-progress {
-            margin-bottom: 1.5rem;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 6px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 3px;
-            overflow: hidden;
-            margin-bottom: 0.5rem;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #FFD700, #FFA500);
-            border-radius: 3px;
-            transition: width 0.3s ease;
-        }
-
-        .progress-text {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .project-btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #1a1a2e;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .project-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-        }
-
-        .project-btn.secondary {
-            background: rgba(255, 215, 0, 0.2);
-            color: #FFD700;
-            border: 1px solid #FFD700;
-        }
-
-        .project-btn.secondary:hover {
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #1a1a2e;
-        }
-
-        /* Research Findings */
-        .research-findings {
-            margin-bottom: 5rem;
-        }
-
-        .research-findings h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            color: #FFD700;
-        }
-
-        .findings-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .finding-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .finding-card:hover {
-            transform: translateY(-3px);
-            border-color: rgba(255, 215, 0, 0.2);
-        }
-
-        .finding-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1.5rem;
-        }
-
-        .finding-header h3 {
-            color: #FFD700;
-            font-size: 1.2rem;
-            flex: 1;
-        }
-
-        .finding-date {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.5);
-            white-space: nowrap;
-            margin-left: 1rem;
-        }
-
-        .finding-visual {
-            margin-bottom: 1.5rem;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .chart-placeholder {
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .chart-bars {
-            display: flex;
-            align-items: end;
-            gap: 8px;
-            height: 60px;
-        }
-
-        .bar {
-            width: 20px;
-            background: linear-gradient(to top, #FFD700, #FFA500);
-            border-radius: 2px 2px 0 0;
-            animation: barGrow 1s ease-out;
-        }
-
-        @keyframes barGrow {
-            from { height: 0; }
-            to { height: var(--height); }
-        }
-
-        .pie-chart {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: conic-gradient(
-                #FFD700 0deg 90deg,
-                #FFA500 90deg 180deg,
-                rgba(255, 215, 0, 0.6) 180deg 270deg,
-                rgba(255, 165, 0, 0.4) 270deg 360deg
-            );
-        }
-
-        .line-chart {
-            width: 100%;
-            height: 60px;
-        }
-
-        .chart-svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .finding-card p {
-            margin-bottom: 1rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .finding-link {
-            color: #FFD700;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .finding-link:hover {
-            color: #FFA500;
-        }
-
-        /* Participate Section */
-        .participate-section {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.05), rgba(255, 165, 0, 0.02));
-            border-radius: 20px;
-            padding: 4rem 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .participate-content h2 {
-            text-align: center;
-            margin-bottom: 1rem;
-            font-size: 2.5rem;
-            color: #FFD700;
-        }
-
-        .participate-intro {
-            text-align: center;
-            font-size: 1.1rem;
-            color: rgba(255, 255, 255, 0.8);
-            max-width: 600px;
-            margin: 0 auto 3rem auto;
-            line-height: 1.6;
-        }
-
-        .participation-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .participation-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .participation-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 215, 0, 0.3);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
-        }
-
-        .participation-card .card-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .participation-card h3 {
-            color: #FFD700;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-        }
-
-        .participation-card p {
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        .requirements-list {
-            list-style: none;
-            padding: 0;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
-
-        .requirements-list li {
-            padding: 0.5rem 0;
-            color: rgba(255, 255, 255, 0.7);
-            position: relative;
-            padding-left: 1.5rem;
-        }
-
-        .requirements-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #90EE90;
-            font-weight: bold;
-        }
-
-        .participation-btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #1a1a2e;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .participation-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
-        }
-
-        /* Newsletter Section */
-        .newsletter-section {
-            margin-bottom: 4rem;
-        }
-
-        .newsletter-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .newsletter-content {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .newsletter-content h3 {
-            color: #FFD700;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .newsletter-content p {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: 1rem;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 25px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            font-family: inherit;
-        }
-
-        .newsletter-input::placeholder {
-            color: rgba(255, 255, 255, 0.5);
-        }
-
-        .newsletter-input:focus {
-            outline: none;
-            border-color: #FFD700;
-            box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
-        }
-
-        .newsletter-btn {
-            padding: 1rem 2rem;
-            background: linear-gradient(135deg, #FFD700, #FFA500);
-            color: #1a1a2e;
-            border: none;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .newsletter-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
-        }
-
-        /* Ethics Section */
-        .ethics-section h2 {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2.5rem;
-            color: #FFD700;
-        }
-
-        .ethics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .ethics-item {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 10px;
-            padding: 1.5rem;
-            text-align: center;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-        }
-
-        .ethics-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .ethics-item h4 {
-            color: #FFD700;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .ethics-item p {
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.5;
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-stats {
-                gap: 2rem;
-            }
-
-            .stat-number {
-                font-size: 2rem;
-            }
-
-            .projects-grid,
-            .findings-grid,
-            .participation-options {
-                grid-template-columns: 1fr;
-            }
-
-            .newsletter-card {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .participate-section {
-                padding: 2rem 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
+</body>
+</html>
