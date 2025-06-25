@@ -886,3 +886,372 @@ body {
 
 .email-card:hover {
     transform: translate
+
+           /* ==========================================================================
+   RESEARCH PAGE SPECIFIC STYLES
+   Extends style_main.css with research-specific components
+   ========================================================================== */
+
+/* Hero Stats Extension for Research Page */
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #006699;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Research Card Extensions */
+.research-card {
+    position: relative;
+}
+
+.research-card.active {
+    border-color: rgba(0, 102, 153, 0.3);
+    box-shadow: 0 8px 30px rgba(0, 102, 153, 0.15);
+}
+
+.research-card.active::before {
+    background: linear-gradient(135deg, #006699, #004d73);
+}
+
+.project-status {
+    font-size: 0.85rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center;
+}
+
+.project-status.active {
+    color: #28a745;
+    font-weight: 500;
+}
+
+/* Progress Bars */
+.project-progress {
+    margin: 1.5rem 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(0, 102, 153, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #006699, #004d73);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+    display: block;
+}
+
+/* Project Button Variations */
+.project-btn {
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.cta-button.secondary {
+    background: rgba(0, 102, 153, 0.1);
+    color: #006699;
+    border: 2px solid #006699;
+}
+
+.cta-button.secondary:hover {
+    background: #006699;
+    color: white;
+}
+
+/* Finding Cards */
+.finding-card .card-icon {
+    display: none; /* Hide default card icon for findings */
+}
+
+.finding-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.finding-header h3 {
+    margin-bottom: 0;
+    flex: 1;
+}
+
+.finding-date {
+    font-size: 0.8rem;
+    color: #999;
+    white-space: nowrap;
+    margin-left: 1rem;
+    font-style: italic;
+}
+
+/* Chart Visualizations */
+.finding-visual {
+    margin-bottom: 1.5rem;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-placeholder {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 102, 153, 0.05);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 102, 153, 0.1);
+}
+
+.chart-bars {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    height: 60px;
+}
+
+.bar {
+    width: 20px;
+    background: linear-gradient(to top, #006699, #99ccff);
+    border-radius: 2px 2px 0 0;
+    animation: barGrow 1s ease-out;
+}
+
+@keyframes barGrow {
+    from { height: 0; }
+    to { height: var(--final-height, 100%); }
+}
+
+.pie-chart {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #006699 0deg 90deg,
+        #99ccff 90deg 180deg,
+        rgba(0, 102, 153, 0.6) 180deg 270deg,
+        rgba(153, 204, 255, 0.4) 270deg 360deg
+    );
+}
+
+.line-chart {
+    width: 100%;
+    height: 60px;
+}
+
+.chart-svg {
+    width: 100%;
+    height: 100%;
+}
+
+.finding-link {
+    color: #006699;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.finding-link:hover {
+    color: #004d73;
+    text-decoration: underline;
+}
+
+/* Participation Grid Override */
+.participation-grid .card {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.participation-card .card-icon {
+    font-size: 3rem;
+    background: linear-gradient(135deg, #006699, #99ccff);
+    color: white;
+}
+
+/* Requirements Lists */
+.requirements-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.requirements-list li {
+    padding: 0.5rem 0;
+    color: #666;
+    position: relative;
+    padding-left: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.requirements-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #006699;
+    font-weight: bold;
+}
+
+/* Newsletter Card */
+.newsletter-card {
+    background: rgba(0, 102, 153, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(0, 102, 153, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.newsletter-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.newsletter-content h3 {
+    color: #006699;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.newsletter-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+    min-width: 300px;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 1rem;
+    border: 1px solid rgba(0, 102, 153, 0.3);
+    border-radius: 25px;
+    background: white;
+    color: #333;
+    font-family: inherit;
+}
+
+.newsletter-input::placeholder {
+    color: #999;
+}
+
+.newsletter-input:focus {
+    outline: none;
+    border-color: #006699;
+    box-shadow: 0 0 0 2px rgba(0, 102, 153, 0.2);
+}
+
+.newsletter-btn {
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #006699, #004d73);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-family: inherit;
+}
+
+.newsletter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 102, 153, 0.4);
+}
+
+/* Ethics Cards - minimal styling since they use base card styles */
+.ethics-card .card-icon {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #006699, #99ccff);
+    color: white;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero-stats {
+        gap: 2rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .finding-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .finding-date {
+        margin-left: 0;
+    }
+    
+    .newsletter-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .requirements-list {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .chart-bars {
+        gap: 6px;
+    }
+    
+    .bar {
+        width: 16px;
+    }
+    
+    .pie-chart {
+        width: 50px;
+        height: 50px;
+    }
+}
