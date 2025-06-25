@@ -790,3 +790,99 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
+
+
+/* ==========================================================================
+   CONTACT PAGE STYLES
+   ========================================================================== */
+
+/* Main form section - the star of the page */
+.main-form-section {
+    margin: 2rem 0 3rem 0;
+}
+
+.google-form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2rem;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0,102,153,0.2);
+    box-shadow: 0 8px 32px rgba(0,102,153,0.15);
+}
+
+.google-form-container iframe {
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-backup {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: rgba(0,102,153,0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(0,102,153,0.2);
+}
+
+.form-backup a {
+    color: #006699;
+    text-decoration: underline;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.form-backup a:hover {
+    color: #004d73;
+}
+
+/* Alternative contact section */
+.alternative-contact {
+    margin: 4rem 0;
+}
+
+.divider {
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0,102,153,0.3), transparent);
+}
+
+.divider span {
+    background: white;
+    padding: 0 2rem;
+    color: #666;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.email-option {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.email-card {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0,102,153,0.1);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.email-card:hover {
+    transform: translate
